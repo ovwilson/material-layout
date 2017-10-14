@@ -1,0 +1,15 @@
+@import "./../css/material-icons.css";
+@import "~@angular/material/_theming.scss";
+@include mat-core();
+
+@import "./_variables.scss";
+@import "./_layout.scss";
+@import "./_sidenav.scss";
+
+// Deep Purple Amber.
+$lightprimary: mat-palette($mat-deep-purple);
+$lightaccent : mat-palette($mat-amber, A200, A100, A400);
+$lighttheme: mat-light-theme($lightprimary, $lightaccent);
+
+@include angular-material-theme($lighttheme);
+@include sidenav-theme($lighttheme);

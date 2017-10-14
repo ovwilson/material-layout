@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { SharedMaterialModule } from './shared.material.module';
 import { NavbarComponent } from './../components/navbar/navbar.component';
+
+import { LoaderIndeterminateComponent } from './../components/loader-indeterminate/loader-indeterminate.component';
 import { SidenavStartComponent } from './../components/sidenav-start/sidenav-start.component';
 import { SidenavEndComponent } from './../components/sidenav-end/sidenav-end.component';
 
@@ -16,7 +18,8 @@ import { SidenavEndComponent } from './../components/sidenav-end/sidenav-end.com
     declarations: [
         NavbarComponent,
         SidenavStartComponent,
-        SidenavEndComponent
+        SidenavEndComponent,
+        LoaderIndeterminateComponent
     ],
     exports: [
         CommonModule,
@@ -24,7 +27,8 @@ import { SidenavEndComponent } from './../components/sidenav-end/sidenav-end.com
         SharedMaterialModule,
         NavbarComponent,
         SidenavStartComponent,
-        SidenavEndComponent
+        SidenavEndComponent,
+        LoaderIndeterminateComponent
     ]
 })
 export class SharedModule { }

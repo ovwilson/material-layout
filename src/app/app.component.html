@@ -1,11 +1,17 @@
 <mat-sidenav-container>
 
-  <mat-sidenav>
-    <sidenav-start></sidenav-start>
+  <mat-sidenav mode="over" align="start" [opened]="(sideNavs$ | async).start" (close)="onClose($event)">
+    <sidenav-start (onToggleSideNav)="onToggleSideNav($event)"></sidenav-start>
   </mat-sidenav>
+
+  <mat-sidenav mode="side" align="end" [opened]="(sideNavs$ | async).end" (close)="onClose($event)">
+    <sidenav-end (onToggleSideNav)="onToggleSideNav($event)"> </sidenav-end>
+  </mat-sidenav>
+
 
   <header>
     <navbar (onToggleSideNav)="onToggleSideNav($event)"></navbar>
+    <loader-indeterminate></loader-indeterminate>
   </header>
 
   <main>
