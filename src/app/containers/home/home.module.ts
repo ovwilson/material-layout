@@ -8,8 +8,7 @@ import { SharedMaterialModule } from './../../shared/shared.material.module';
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule.forChild(APPRROUTES),
-    SharedMaterialModule
+    RouterModule.forChild(APPRROUTES)
   ],
   declarations: [
     HomeComponent

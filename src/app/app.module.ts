@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
@@ -17,7 +17,7 @@ import { environment } from '../environments/environment';
     AppComponent
   ],
   imports: [
-    BrowserAnimationsModule,
+    BrowserModule,
     SharedModule,
     RouterModule.forRoot(APPRROUTES, { preloadingStrategy: PreloadSelectedModules }),
     StoreModule.forRoot(reducers),
