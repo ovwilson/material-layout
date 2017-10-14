@@ -8,6 +8,12 @@
   dependencies:
     tslib "^1.7.1"
 
+"@angular/cdk@^2.0.0-beta.12":
+  version "2.0.0-beta.12"
+  resolved "https://registry.yarnpkg.com/@angular/cdk/-/cdk-2.0.0-beta.12.tgz#3a243cb62b93f4e039120ba70f900dc9e235622e"
+  dependencies:
+    tslib "^1.7.1"
+
 "@angular/cli@1.2.7":
   version "1.2.7"
   resolved "https://registry.yarnpkg.com/@angular/cli/-/cli-1.2.7.tgz#dd20e8b0da24af5359077c05a6944823cb764132"
@@ -118,6 +124,12 @@
   version "4.4.5"
   resolved "https://registry.yarnpkg.com/@angular/language-service/-/language-service-4.4.5.tgz#ccef139b8d3e1684b01afa35c6fbf2172e2bb676"
 
+"@angular/material@^2.0.0-beta.12":
+  version "2.0.0-beta.12"
+  resolved "https://registry.yarnpkg.com/@angular/material/-/material-2.0.0-beta.12.tgz#71b6d0b7b021891e5d0e3688c1d4bd78c7457f58"
+  dependencies:
+    tslib "^1.7.1"
+
 "@angular/platform-browser-dynamic@^4.0.0":
   version "4.4.5"
   resolved "https://registry.yarnpkg.com/@angular/platform-browser-dynamic/-/platform-browser-dynamic-4.4.5.tgz#774dbdc1d90f775dbf1e319f6ed42b260623b61f"
@@ -141,6 +153,18 @@
   resolved "https://registry.yarnpkg.com/@angular/tsc-wrapped/-/tsc-wrapped-4.4.5.tgz#30a0cbb43a663aa75dca984894be4813778ddc9c"
   dependencies:
     tsickle "^0.21.0"
+
+"@ngrx/effects@^4.0.5":
+  version "4.0.5"
+  resolved "https://registry.yarnpkg.com/@ngrx/effects/-/effects-4.0.5.tgz#1224763800621b7305f9b18bc17ee09b25c861d1"
+
+"@ngrx/store-devtools@^4.0.0":
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/@ngrx/store-devtools/-/store-devtools-4.0.0.tgz#b79c24773217df7fd9735ad21f9cbf2533c96e04"
+
+"@ngrx/store@^4.0.3":
+  version "4.0.3"
+  resolved "https://registry.yarnpkg.com/@ngrx/store/-/store-4.0.3.tgz#36abacdfa19bfb8506e40de80bae06050a1e15e9"
 
 "@ngtools/json-schema@1.1.0":
   version "1.1.0"
@@ -1990,6 +2014,10 @@ globule@^1.0.0:
 graceful-fs@^4.1.2, graceful-fs@^4.1.6:
   version "4.1.11"
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.1.11.tgz#0e8bdfe4d1ddb8854d64e04ea7c00e2a026e5658"
+
+hammerjs@^2.0.8:
+  version "2.0.8"
+  resolved "https://registry.yarnpkg.com/hammerjs/-/hammerjs-2.0.8.tgz#04ef77862cff2bb79d30f7692095930222bf60f1"
 
 handle-thing@^1.2.5:
   version "1.2.5"
