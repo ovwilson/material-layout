@@ -1,12 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { NavbarComponent } from './../components/navbar/navbar.component';
-import { LoaderIndeterminateComponent } from './../components/loader-indeterminate/loader-indeterminate.component';
-import { SidenavStartComponent } from './../components/sidenav-start/sidenav-start.component';
-import { SidenavEndComponent } from './../components/sidenav-end/sidenav-end.component';
-
-
+import { NavbarComponent } from './navbar/navbar.component';
+import { LoaderIndeterminateComponent } from './loader-indeterminate/loader-indeterminate.component';
+import { SidenavStartComponent } from './sidenav-start/sidenav-start.component';
+import { SidenavEndComponent } from './sidenav-end/sidenav-end.component';
 import { SharedMaterialModule } from './../shared/shared.material.module';
 
 @NgModule({

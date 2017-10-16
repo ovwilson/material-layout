@@ -1,0 +1,7 @@
+<h1>Settings</h1>
+
+<div *ngFor="let setting of settings$ | async">
+    <ul>
+        <li>{{setting?.titleKey}}</li>
+    </ul>
+</div>
