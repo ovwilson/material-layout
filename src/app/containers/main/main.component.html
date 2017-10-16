@@ -1,7 +1,6 @@
-<h1>Settings</h1>
-
-<div *ngFor="let setting of settings$ | async">
-    <ul>
-        <li>{{setting?.titleKey}}</li>
-    </ul>
+<div [class.loading]="loaderIndeterminate$ | async">
+    <h1>Settings</h1>
+    <settings [settings]="settings$ | async"></settings>
+    <setting-add></setting-add>
+    <setting-update></setting-update>
 </div>

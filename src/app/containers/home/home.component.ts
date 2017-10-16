@@ -12,7 +12,7 @@ export class HomeComponent {
 
   constructor(private store: Store<fromRoot.State>) {
     this.loaderIndeterminate$ = this.store.select(state => state.loading);
-}
+  }
 
 
 }

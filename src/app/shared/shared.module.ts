@@ -5,13 +5,15 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { LoaderIndeterminateComponent } from './loader-indeterminate/loader-indeterminate.component';
 import { SidenavStartComponent } from './sidenav-start/sidenav-start.component';
 import { SidenavEndComponent } from './sidenav-end/sidenav-end.component';
-import { SharedMaterialModule } from './../shared/shared.material.module';
+import { SharedMaterialModule } from './shared.material.module';
+import { SharedFormsModule } from './shared.forms.module';
 
 @NgModule({
     imports: [
         CommonModule,
         FormsModule,
-        SharedMaterialModule
+        SharedMaterialModule,
+        SharedFormsModule
     ],
     declarations: [
         NavbarComponent,
@@ -22,6 +24,7 @@ import { SharedMaterialModule } from './../shared/shared.material.module';
     exports: [
         CommonModule,
         FormsModule,
+        SharedFormsModule,
         SharedMaterialModule,
         NavbarComponent,
         SidenavStartComponent,
