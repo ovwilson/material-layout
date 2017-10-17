@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output } from '@angular/core';
 import { Setting } from './../../models/setting';
 
 @Component({
@@ -9,6 +9,23 @@ import { Setting } from './../../models/setting';
 export class SettingsComponent {
 
     @Input() settings: Setting[];
+
+    onAdd(direction: string) {
+     
+    
+      }
+
+    onView(setting: Setting) {
+
+    }
+
+    onEdit(setting: Setting) {
+
+    }
+
+    onRemove(setting: Setting) {
+
+    }
 
 
 }

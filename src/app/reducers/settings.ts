@@ -9,7 +9,11 @@ export interface State {
 }
 
 const initialState: State = {
-    models: [{ titleKey: 'Test', key: 'test', category: 'test' }],
+    models: [
+        { id: 1, titleKey: 'Yo', key: 'test', category: 'test' },
+        { id: 2, titleKey: 'Test Yo', key: 'test', category: 'test' },
+        { id: 3, titleKey: 'Yo Test', key: 'test', category: 'test' }
+    ],
     model: {},
     modelChanges: {}
 };

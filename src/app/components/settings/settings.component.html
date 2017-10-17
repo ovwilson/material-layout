@@ -1,6 +1,32 @@
-
-<div *ngFor="let setting of settings">
-    <ul>
-        <li>Title Key: {{setting?.titleKey}}, Key: {{setting?.key}}, Category: {{setting?.category}} </li>
-    </ul>
+<div>
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title Key</th>
+                <th>Key</th>
+                <th>Category</th>
+                <th>View</th>
+                <th>Edit</th>
+                <th>Remove</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let setting of settings">
+                <td>{{setting?.id}}</td>
+                <td>{{setting?.titleKey}}</td>
+                <td>{{setting?.key}}</td>
+                <td>{{setting?.category}}</td>
+                <td>
+                    <a mat-button (click)="onView(setting)">View</a>
+                </td>
+                <td>
+                    <a mat-button (click)="onEdit(setting)">Edit</a>
+                </td>
+                <td>
+                    <a mat-button (click)="onRemove(setting)">Remove</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </div>
