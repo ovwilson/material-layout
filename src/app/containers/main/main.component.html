@@ -1,6 +1,7 @@
 <div [class.loading]="loaderIndeterminate$ | async">
     <h1>Settings</h1>
-    <settings [settings]="settings$ | async"></settings>
+    <settings (add)="add($event)" [settings]="settings$ | async"></settings>
+    <setting-view [model]="setting$ | async"></setting-view>
     <setting-add></setting-add>
     <setting-update></setting-update>
 </div>

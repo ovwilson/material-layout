@@ -20,5 +20,9 @@ export class MainComponent {
         this.setting$ = this.store.select(state => state.settings.model);
     }
 
+    add(evt: any) {
+        console.log('yo');
+    }
+
 
 }

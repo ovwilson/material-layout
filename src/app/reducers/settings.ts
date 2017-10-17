@@ -26,6 +26,12 @@ export function settings(state = initialState, action: fromActions.All) {
                 model: state.model,
                 modelChanges: state.modelChanges
             };
+        case fromActions.SETTING_RECEIVE:
+            return {
+                models: state.models,
+                model: action.payload,
+                modelChanges: state.modelChanges
+            };
         case fromActions.SETTINGS_RESET:
             return initialState;
         default:
