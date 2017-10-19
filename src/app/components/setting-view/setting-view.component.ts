@@ -1,7 +1,7 @@
 import { Component, OnInit, OnChanges, Input, Output, EventEmitter } from '@angular/core';
 import { Router, Route } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Setting } from './../../../models/setting';
+import { Setting } from './../../models/setting';
 
 @Component({
     selector: 'setting-view',

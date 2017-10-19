@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { MainComponent } from './main.component';
-import { APPRROUTES } from './main.routing';
+import { SettingsComponent } from './settings.component';
+import { APPRROUTES } from './settings.routing';
 import { SharedModule } from './../../shared/shared.module';
 
 @NgModule({
@@ -12,7 +12,7 @@ import { SharedModule } from './../../shared/shared.module';
     SharedModule
   ],
   declarations: [
-    MainComponent
+    SettingsComponent
   ],
   exports: [
     RouterModule
@@ -20,4 +20,4 @@ import { SharedModule } from './../../shared/shared.module';
   providers: [
   ]
 })
-export class MainModule { }
+export class SettingsModule { }

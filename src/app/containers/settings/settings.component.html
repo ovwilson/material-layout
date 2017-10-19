@@ -1,0 +1,43 @@
+<div [class.loading]="loaderIndeterminate$ | async">
+    <h1>Settings</h1>
+    <setting-view [model]="model$ | async"></setting-view>
+    <setting-add></setting-add>
+    <setting-update></setting-update>
+</div>
+
+<div>
+    <button mat-button (click)="onAdd()">Add</button>
+</div>
+
+<div>
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title Key</th>
+                <th>Key</th>
+                <th>Category</th>
+                <th>View</th>
+                <th>Edit</th>
+                <th>Remove</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let model of models$ | async">
+                <td>{{model?.id}}</td>
+                <td>{{model?.titleKey}}</td>
+                <td>{{model?.key}}</td>
+                <td>{{model?.category}}</td>
+                <td>
+                    <a mat-button (click)="onView(model)">View</a>
+                </td>
+                <td>
+                    <a mat-button (click)="onEdit(model)">Edit</a>
+                </td>
+                <td>
+                    <a mat-button (click)="onRemove(model)">Remove</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
