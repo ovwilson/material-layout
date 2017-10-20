@@ -8,7 +8,7 @@ export interface State {
 }
 
 const initialState: State = {
-    models: [{ method: 'GET' }],
+    models: [],
     model: {}
 };
 
@@ -37,7 +37,7 @@ export function keywords(state = defaultKeywords, action: fromActions.All) {
     }
 }
 
-export function params(state: KeyPair[] , action: fromActions.All) {
+export function params(state: KeyPair[], action: fromActions.All) {
     switch (action.type) {
         case fromActions.PARAMS_RECEIVE:
             return action.payload;
@@ -63,6 +63,11 @@ export function requests(state = initialState, action: fromActions.All) {
             return {
                 models: action.payload,
                 model: state.model
+            };
+        case fromActions.REQUEST_RECEIVE:
+            return {
+                models: [...state.models, action.payload],
+                model: action.payload
             };
         default:
             return state;

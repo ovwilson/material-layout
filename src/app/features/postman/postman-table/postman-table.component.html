@@ -1,0 +1,17 @@
+<table>
+    <thead>
+        <tr>
+            <th>Method</th>
+            <th>Url</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let request of requests$ | async">
+            <td>
+                <mat-chip-list>
+                    <mat-chip [color]="accent">{{request?.method}}</mat-chip>
+                </mat-chip-list>
+            </td>
+            <td>{{request?.url}}</td>
+        </tr>
+    </tbody>
+</table>

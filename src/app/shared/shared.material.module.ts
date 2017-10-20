@@ -4,7 +4,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import {
     MatSidenavModule, MatToolbarModule, MatIconModule,
     MatButtonModule, MatProgressBarModule, MatRadioModule,
-    MatListModule, MatCardModule
+    MatListModule, MatCardModule, MatFormFieldModule,
+    MatInputModule, MatChipsModule
 } from '@angular/material';
 
 @NgModule({
@@ -18,7 +19,10 @@ import {
         MatProgressBarModule,
         MatRadioModule,
         MatListModule,
-        MatCardModule
+        MatCardModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatChipsModule
     ],
     declarations: [],
     exports: [
@@ -31,7 +35,10 @@ import {
         MatProgressBarModule,
         MatRadioModule,
         MatListModule,
-        MatCardModule
+        MatCardModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatChipsModule
     ]
 })
 export class SharedMaterialModule { }

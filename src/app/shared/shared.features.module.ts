@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PostManComponent } from './../features/postman/postman.component';
+import { PostManTableComponent } from './../features/postman/postman-table/postman-table.component';
 import { SharedMaterialModule } from './shared.material.module';
 import { StoreModule, ActionReducerMap } from '@ngrx/store';
 import { reducers } from './../features/reducers/features.reducers';
@@ -14,13 +15,15 @@ import { reducers } from './../features/reducers/features.reducers';
         StoreModule.forFeature('postman', reducers)
     ],
     declarations: [
-        PostManComponent
+        PostManComponent,
+        PostManTableComponent
     ],
     exports: [
         CommonModule,
         ReactiveFormsModule,
         SharedMaterialModule,
-        PostManComponent
+        PostManComponent,
+        PostManTableComponent
     ]
 })
 export class SharedFeaturesModule { }

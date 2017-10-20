@@ -2,7 +2,7 @@
     $background: map-get($theme, background);
     $foreground: map-get($theme, foreground);
     mat-sidenav {
-        background-color: mat-color($background, card) !important;
+        background-color: mat-color($background, background) !important;
         color: mat-color($foreground, text) !important;
         width:400px;
     }
