@@ -1,3 +1,27 @@
-<div *ngFor="let r of rest$ | async">
-    {{r?.method}}
-</div>
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>PostMan</mat-card-title>
+        <mat-card-subtitle>SharePoint Rest Client</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <div fxLayout="row" fxLayoutGap="20px"> 
+            <form [formGroup]="modelForm">
+                <p>Select Http Method</p>
+                <mat-radio-group formControlName="method" fxLayoutGap="5px">
+                    <mat-radio-button *ngFor="let method of methods$ | async" [value]="method?.value">
+                        {{method?.value}}
+                    </mat-radio-button>
+                </mat-radio-group>
+            </form>
+            <mat-list>
+                <mat-list-item>
+                    <h4 mat-line>Method</h4>
+                    <p mat-line> {{modelForm.value?.method}} </p>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+            </mat-list>
+        </div>
+    </mat-card-content>
+    <mat-card-actions>
+    </mat-card-actions>
+</mat-card>

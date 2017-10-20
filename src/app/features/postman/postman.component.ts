@@ -1,24 +1,34 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { Request, KeyPair } from './../models/rest';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { SPRequest, Keyword, KeyPair } from './../models/sprequest';
 
-import { Store, createSelector, createFeatureSelector } from '@ngrx/store';
+import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
-import * as fromRoot from './../../reducers/reducers';
-
-const selectFeature = createFeatureSelector<any>('postman');
-const models = createSelector(selectFeature, (state: any) => state.models);
+import * as fromFeature from './../reducers/features.reducers';
 
 @Component({
     selector: 'postman',
     templateUrl: './postman.component.html'
 })
 
-export class PostManComponent {
+export class PostManComponent implements OnInit {
 
-    rest$: Observable<any> = Observable.of<any>();
+    modelForm: FormGroup;
 
-    constructor(private store: Store<fromRoot.State>) {
-        this.store.select(models);
+    methods$: Observable<Keyword[]> = Observable.of<Keyword[]>([]);
+
+    constructor(private store: Store<fromFeature.State>, private fb: FormBuilder) {
+        this.methods$ = this.store.select(fromFeature.selectMethods);
+    }
+
+    ngOnInit() {
+        this.createForm();
+    }
+
+    createForm() {
+        this.modelForm = this.fb.group({
+            method: ''
+        });
     }
 
 }

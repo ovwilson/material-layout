@@ -10,7 +10,6 @@ import { reducers } from './reducers/reducers';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 
-import { SharedFeaturesModule } from './shared/shared.features.module';
 import { APPRROUTES } from './app.routing';
 import { PreloadSelectedModules } from './app.preload-strategy';
 
