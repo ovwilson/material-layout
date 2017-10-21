@@ -1,6 +1,6 @@
 import { ActionReducer, Action } from '@ngrx/store';
-import * as fromActions from './postman.actions';
-import { SPRequest, KeyPair, Keyword } from './../models/sprequest';
+import * as fromActions from './../actions/actions';
+import { SPRequest, KeyPair, Keyword } from './../models/request';
 
 export interface State {
     models: SPRequest[];

@@ -23,5 +23,9 @@ export class NavbarComponent {
     this.router.navigate(['/settings']);
   }
 
+  onPostMan() {
+    this.router.navigate(['/postman', { outlets: { 'collections': 'collection' } }]);
+  }
+
 
 }

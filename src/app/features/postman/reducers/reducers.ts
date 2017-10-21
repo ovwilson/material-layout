@@ -1,9 +1,9 @@
 import { StoreModule, ActionReducerMap, createFeatureSelector, createSelector } from '@ngrx/store';
-import * as fromPostMan from './../postman/postman.reducers';
-import { SPRequest, KeyPair, Keyword } from './../models/sprequest';
+import * as fromRequests from './requests.reducers';
+import { SPRequest, KeyPair, Keyword } from './../models/request';
 
 export interface State {
-    requests: fromPostMan.State;
+    requests: fromRequests.State;
     headers: KeyPair[];
     params: KeyPair[];
     bodies: KeyPair[];
@@ -11,11 +11,11 @@ export interface State {
 }
 
 export const reducers: ActionReducerMap<State> = {
-    requests: fromPostMan.requests,
-    headers: fromPostMan.headers,
-    params: fromPostMan.params,
-    bodies: fromPostMan.bodies,
-    keywords: fromPostMan.keywords
+    requests: fromRequests.requests,
+    headers: fromRequests.headers,
+    params: fromRequests.params,
+    bodies: fromRequests.bodies,
+    keywords: fromRequests.keywords
 };
 
 export const selectFeature = createFeatureSelector<State>('postman');
@@ -34,5 +34,3 @@ export const filterHeaders = createSelector(selectHeaders, selectRequest,
 
 export const selectMethods = createSelector(selectFeature,
     (state: State) => state.keywords);
-    
-    //.filter(keyword => keyword.category === 'methods'));

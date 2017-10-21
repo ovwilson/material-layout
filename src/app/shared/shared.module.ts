@@ -6,14 +6,12 @@ import { LoaderIndeterminateComponent } from './../components/loader-indetermina
 import { SidenavStartComponent } from './../components/sidenav-start/sidenav-start.component';
 import { SidenavEndComponent } from './../components/sidenav-end/sidenav-end.component';
 import { SharedMaterialModule } from './shared.material.module';
-import { SharedFormsModule } from './shared.forms.module';
 
 @NgModule({
     imports: [
         CommonModule,
         FormsModule,
-        SharedMaterialModule,
-        SharedFormsModule
+        SharedMaterialModule
     ],
     declarations: [
         NavbarComponent,
@@ -24,7 +22,6 @@ import { SharedFormsModule } from './shared.forms.module';
     exports: [
         CommonModule,
         FormsModule,
-        SharedFormsModule,
         SharedMaterialModule,
         NavbarComponent,
         SidenavStartComponent,

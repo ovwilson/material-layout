@@ -1,5 +1,5 @@
 import { Action } from '@ngrx/store';
-import { SPRequest, KeyPair, Keyword } from './../models/sprequest';
+import { SPRequest, KeyPair, Keyword } from './../models/request';
 
 export const REQUESTS_RECEIVE = '[Requests] Receive';
 export const REQUEST_RECEIVE = '[Request] Receive';
@@ -17,7 +17,6 @@ export class RequestReceive implements Action {
     readonly type = REQUEST_RECEIVE;
     constructor(public payload: SPRequest) { }
 }
-
 
 export class HeadersReceive implements Action {
     readonly type = HEADERS_RECEIVE;

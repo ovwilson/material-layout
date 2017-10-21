@@ -1,15 +1,14 @@
 import { Component, OnInit, AfterViewInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { SPRequest, Keyword, KeyPair } from './../models/sprequest';
+import { SPRequest, Keyword, KeyPair } from './models/request';
 
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
-import * as fromFeature from './../reducers/features.reducers';
-import * as fromActions from './postman.actions';
+import * as fromFeature from './reducers/reducers';
+import * as fromActions from './actions/actions';
 
 @Component({
-    selector: 'postman',
     templateUrl: './postman.component.html'
 })
 
@@ -52,12 +51,13 @@ export class PostManComponent implements OnInit, AfterViewInit {
     }
 
     setValueChanges() {
-     //   this.valueChanges$ = this.modelForm.valueChanges.do(request =>
+     this.valueChanges$ = this.modelForm.valueChanges;
+     //(request =>
        //     this.store.dispatch(new fromActions.RequestReceive(request)));
     }
 
     onSubmit() {
-        this.router.navigate(['/home', { outlets: { 'tables': 'postman' } }]);
+       // this.router.navigate(['/postman', { outlets: { 'collections': 'collection' } }]);
         this.store.dispatch(new fromActions.RequestReceive(this.modelForm.value));
     }
 
