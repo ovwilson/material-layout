@@ -1,0 +1,50 @@
+<div fxLayout="column" fxLayoutGap="20px">
+
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>Form Values</mat-card-title>
+        </mat-card-header>
+        <pre> {{modelForm.value | json}}</pre>
+        <pre> {{valueChanges$ | async | json}}</pre>
+        <pre> {{modelForm.status }}</pre>
+    </mat-card>
+
+    <mat-card>
+
+        <mat-card-header>
+            <mat-card-title>PostMan</mat-card-title>
+            <mat-card-subtitle>SharePoint Rest Client</mat-card-subtitle>
+        </mat-card-header>
+
+        <mat-card-content>
+
+            <form [formGroup]="modelForm" fxLayout="column" fxLayoutGap="30px">
+
+                <span>Select Http Method</span>
+                <mat-radio-group formControlName="method" fxLayoutGap="5px">
+                    <mat-radio-button color="primary" *ngFor="let method of methods$ | async" [value]="method?.value">
+                        {{method?.value}}
+                    </mat-radio-button>
+                </mat-radio-group>
+
+                <mat-form-field>
+                    <input matInput formControlName="url" placeholder="Url">
+                </mat-form-field>
+
+            </form>
+
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-button (click)="onSubmit()" color="primary">
+                <mat-icon>save</mat-icon> Submit</button>
+        </mat-card-actions>
+    </mat-card>
+
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>Results</mat-card-title>
+        </mat-card-header>
+        <pre>{{modelForm.value.results}}</pre>
+    </mat-card>
+
+</div>

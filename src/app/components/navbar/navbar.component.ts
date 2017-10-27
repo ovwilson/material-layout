@@ -19,8 +19,12 @@ export class NavbarComponent {
     this.router.navigate(['/home']);
   }
 
-  onMain() {
-    this.router.navigate(['/main']);
+  onSettings() {
+    this.router.navigate(['/settings']);
+  }
+
+  onPostMan() {
+    this.router.navigate(['/postman', { outlets: { 'collections': 'collection' } }]);
   }
 
 

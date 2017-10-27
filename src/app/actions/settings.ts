@@ -4,6 +4,8 @@ import { Setting} from './../models/setting';
 export const SETTINGS_GET = '[Settings] Get';
 export const SETTINGS_RECEIVE = '[Settings] Receive';
 
+export const SETTING_RECEIVE = '[Setting] Receive';
+
 export const SETTING_GET = '[Setting] Get';
 export const SETTING_CREATE = '[Setting] Create';
 export const SETTING_UPDATE = '[Setting] Update';
@@ -20,6 +22,11 @@ export class SettingsReceive implements Action {
     constructor(public payload: Setting[]) { }
 }
 
+export class SettingReceive implements Action {
+    readonly type = SETTING_RECEIVE;
+    constructor(public payload: Setting) { }
+}
+
 export class SettingsReset implements Action {
     readonly type = SETTINGS_RESET;
     constructor(public payload: any) { }
@@ -27,4 +34,5 @@ export class SettingsReset implements Action {
 
 export type All  = SettingsGet
     | SettingsReceive
+    | SettingReceive
     | SettingsReset;
