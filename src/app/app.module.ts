@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { APP_BASE_HREF } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
@@ -13,6 +14,9 @@ import { PreloadSelectedModules } from './app.preload-strategy';
 
 import { environment } from '../environments/environment';
 
+
+
+
 @NgModule({
   declarations: [
     AppComponent
@@ -25,7 +29,7 @@ import { environment } from '../environments/environment';
     StoreModule.forRoot(reducers),
     !environment.production ? StoreDevtoolsModule.instrument({ maxAge: 50 }) : []
   ],
-  providers: [PreloadSelectedModules],
+  providers: [PreloadSelectedModules, { provide: APP_BASE_HREF, useValue: '/' }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
