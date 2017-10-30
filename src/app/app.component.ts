@@ -6,6 +6,8 @@ import * as fromRoot from './reducers/reducers';
 import * as fromSideNavActions from './actions/sidenavs';
 import * as fromLoaderActions from './actions/loaders';
 
+import 'rxjs/add/observable/of';
+
 @Component({
   selector: 'body',
   templateUrl: './app.component.html',
