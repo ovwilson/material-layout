@@ -19,13 +19,7 @@ export class SettingViewComponent implements OnInit, OnChanges {
     }
 
     ngOnChanges() {
-        if (this.modelForm) {
-            this.modelForm.setValue({
-                titleKey: this.model.titleKey,
-                key: this.model.key,
-                category: this.model.category
-            });
-        }
+        if (this.modelForm) { this.setValues(this.model); }
     }
 
     createForm() {
@@ -33,6 +27,14 @@ export class SettingViewComponent implements OnInit, OnChanges {
             titleKey: '',
             key: '',
             category: ''
+        });
+    }
+
+    setValues(model: Setting) {
+        this.modelForm.setValue({
+            titleKey: model.titleKey,
+            key: model.key,
+            category: model.category
         });
     }
 

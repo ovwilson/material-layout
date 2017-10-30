@@ -1,19 +1,17 @@
 <h1>Setting View</h1>
 
 <form [formGroup]="modelForm">
-    <div>
-        <label>Title Key:
-            <input class="form-control" formControlName="titleKey">
-        </label>
-    </div>
-    <div>
-        <label>Key:
-            <input class="form-control" formControlName="key">
-        </label>
-    </div>
-    <div>
-        <label>Category:
-            <input class="form-control" formControlName="category">
-        </label>
-    </div>
+
+    <mat-form-field>
+        <input matInput id="titleKey" name="titleKey" formControlName="titleKey" placeholder="titleKey">
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput id="key" name="key" formControlName="key" placeholder="key">
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput id="category" name="category" formControlName="category" placeholder="category">
+    </mat-form-field>
+
 </form>
