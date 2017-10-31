@@ -36,7 +36,7 @@ describe('Material Test', () => {
         component = fixture.componentInstance;
     }));
 
-    it('should poplute input fields', async(() => {
+    it('should populate input fields', async(() => {
         const setting: Setting = { titleKey: 'test', key: 'i', category: 'Test' };
         fixture.detectChanges();
         component.setValues(setting);

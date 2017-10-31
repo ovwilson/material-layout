@@ -2,8 +2,7 @@ import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'sidenav-end',
-  templateUrl: './sidenav-end.component.html',
-  styleUrls: ['./sidenav-end.component.css']
+  templateUrl: './sidenav-end.component.html'
 })
 export class SidenavEndComponent {
 
