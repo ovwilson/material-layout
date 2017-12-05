@@ -11,6 +11,6 @@ export class SidenavStartComponent {
   constructor() { }
 
   toggleSideNav() {
-    this.onToggleSideNav.emit('end');
+    this.onToggleSideNav.emit('start');
   }
 }

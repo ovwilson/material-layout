@@ -1,7 +1,7 @@
 import { Component, OnInit, AfterViewInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { SPRequest, Keyword, KeyPair } from './models/request';
+import { SPRequest } from './models/request';
 
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
@@ -16,12 +16,9 @@ export class PostManComponent implements OnInit, AfterViewInit {
 
     modelForm: FormGroup;
     valueChanges$: Observable<any> = Observable.of<any>();
-    methods$: Observable<Keyword[]> = Observable.of<Keyword[]>([]);
 
-    constructor(private store: Store<fromFeature.State>,
-        private fb: FormBuilder,
-        private router: Router) {
-        this.methods$ = this.store.select(fromFeature.selectMethods);
+    constructor(private store: Store<fromFeature.State>, private fb: FormBuilder, private router: Router) {
+        // this.methods$ = this.store.select(fromFeature.selectMethods);
     }
 
     ngOnInit() {
@@ -51,13 +48,13 @@ export class PostManComponent implements OnInit, AfterViewInit {
     }
 
     setValueChanges() {
-     this.valueChanges$ = this.modelForm.valueChanges;
-     //(request =>
-       //     this.store.dispatch(new fromActions.RequestReceive(request)));
+        this.valueChanges$ = this.modelForm.valueChanges;
+        //(request =>
+        //     this.store.dispatch(new fromActions.RequestReceive(request)));
     }
 
     onSubmit() {
-       // this.router.navigate(['/postman', { outlets: { 'collections': 'collection' } }]);
+        // this.router.navigate(['/postman', { outlets: { 'collections': 'collection' } }]);
         this.store.dispatch(new fromActions.RequestReceive(this.modelForm.value));
     }
 

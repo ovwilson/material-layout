@@ -5,7 +5,7 @@ import {
     MatSidenavModule, MatToolbarModule, MatIconModule,
     MatButtonModule, MatProgressBarModule, MatRadioModule,
     MatListModule, MatCardModule, MatFormFieldModule,
-    MatInputModule, MatChipsModule
+    MatInputModule, MatChipsModule, MatTabsModule, MatSelectModule
 } from '@angular/material';
 
 @NgModule({
@@ -22,7 +22,9 @@ import {
         MatCardModule,
         MatFormFieldModule,
         MatInputModule,
-        MatChipsModule
+        MatChipsModule,
+        MatTabsModule, 
+        MatSelectModule
     ],
     declarations: [],
     exports: [
@@ -38,7 +40,9 @@ import {
         MatCardModule,
         MatFormFieldModule,
         MatInputModule,
-        MatChipsModule
+        MatChipsModule,
+        MatTabsModule,
+        MatSelectModule
     ]
 })
 export class SharedMaterialModule { }

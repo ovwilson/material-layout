@@ -10,15 +10,16 @@ export interface State {
 
 const initialState: State = {
     models: [
-        { id: 1, titleKey: 'Yo', key: 'test', category: 'test' },
-        { id: 2, titleKey: 'Test Yo', key: 'test', category: 'test' },
-        { id: 3, titleKey: 'Yo Test', key: 'test', category: 'test' }
+        { titleKey: 'keywords', category: 'methods', key: 'method', value: 'GET' },
+        { titleKey: 'keywords', category: 'methods', key: 'method', value: 'POST' },
+        { titleKey: 'keywords', category: 'methods', key: 'method', value: 'PATCH' },
+        { titleKey: 'keywords', category: 'methods', key: 'method', value: 'DELETE' }
     ],
     model: {},
     modelChanges: {}
 };
 
-export function settings(state = initialState, action: fromActions.All) {
+export function settings(state = initialState, action: fromActions.All): State {
     switch (action.type) {
         case fromActions.SETTINGS_RECEIVE:
             return {

@@ -1,11 +1,11 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { Setting } from './../../models/setting';
+import { Setting } from './models/setting';
 
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
-import * as fromRoot from './../../reducers/reducers';
+import * as fromFeature from './reducers/reducers';
 
-import * as fromActions from './../../actions/settings';
+import * as fromActions from './actions/settings';
 
 @Component({
     selector: 'settings',
@@ -18,8 +18,7 @@ export class SettingsComponent {
     models$: Observable<Setting[]> = Observable.of<Setting[]>([]);
     model$: Observable<Setting> = Observable.of<Setting>();
 
-    constructor(private store: Store<fromRoot.State>) {
-        this.loaderIndeterminate$ = this.store.select(state => state.loading);
+    constructor(private store: Store<fromFeature.State>) {
         this.models$ = this.store.select(state => state.settings.models);
         this.model$ = this.store.select(state => state.settings.model);
     }

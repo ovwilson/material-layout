@@ -1,6 +1,7 @@
 export interface Setting {
     id?: number;
     titleKey?: string;
-    key?: string;
     category?: string;
+    key?: string;
+    value?: string;
 }

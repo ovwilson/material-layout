@@ -3,13 +3,11 @@ import { Store } from '@ngrx/store';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 import { Observable } from 'rxjs/Observable';
 import * as fromRoot from './reducers/reducers';
-import * as fromSideNavActions from './actions/sidenavs';
-import * as fromLoaderActions from './actions/loaders';
+import * as fromSideNavActions from './features/layouts/actions/sidenavs';
+import * as fromLoaderActions from './features/layouts/actions/loaders';
+import * as fromSettingsActions from './features/settings/actions/settings';
 
-import * as fromSettingsActions from './actions/settings';
-
-import { Setting } from './models/setting';
-import * as fromSelectors from './app.selectors';
+import { Setting } from './features/settings/models/setting';
 
 import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/do';
