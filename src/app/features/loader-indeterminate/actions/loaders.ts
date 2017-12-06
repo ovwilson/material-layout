@@ -11,6 +11,4 @@ export class LoadingHide implements Action {
     readonly type = LOADING_HIDE;
 }
 
-export type All
-    = LoadingShow
-    | LoadingHide;
+export type All = LoadingShow | LoadingHide;

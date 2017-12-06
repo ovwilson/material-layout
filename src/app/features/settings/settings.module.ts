@@ -11,7 +11,7 @@ import { SettingUpdateComponent } from './components/setting-update/setting-upda
 import { SettingViewComponent } from './components/setting-view/setting-view.component';
 import { APPRROUTES } from './settings.routing';
 
-import { settingsReducers} from './reducers/reducers';
+import { settings } from './reducers/settings';
 
 @NgModule({
   imports: [
@@ -19,7 +19,7 @@ import { settingsReducers} from './reducers/reducers';
     ReactiveFormsModule,
     SharedMaterialModule,
     RouterModule.forChild(APPRROUTES),
-    StoreModule.forFeature('settings', settingsReducers )
+    StoreModule.forFeature('settings', settings)
   ],
   declarations: [
     SettingsComponent,

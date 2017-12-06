@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
-import * as fromRoot from './../../reducers/reducers';
+import * as fromRoot from './../../../reducers/reducers';
 
 @Component({
     selector: 'loader-indeterminate',
