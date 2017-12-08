@@ -14,6 +14,7 @@ import { APPRROUTES } from './app.routing';
 import { PreloadSelectedModules } from './app.preload-strategy';
 
 import { environment } from '../environments/environment';
+import { reducers } from './reducers/reducers';
 
 
 @NgModule({
@@ -25,7 +26,7 @@ import { environment } from '../environments/environment';
     BrowserAnimationsModule,
     SharedModule,
     RouterModule.forRoot(APPRROUTES, { preloadingStrategy: PreloadSelectedModules }),
-   // StoreModule.forRoot(reducers),
+    StoreModule.forRoot(reducers),
     !environment.production ? StoreDevtoolsModule.instrument({ maxAge: 50 }) : []
   ],
   providers: [PreloadSelectedModules, { provide: APP_BASE_HREF, useValue: '/' }],

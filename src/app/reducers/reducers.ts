@@ -1,14 +1,27 @@
 import { StoreModule, ActionReducerMap, createFeatureSelector, createSelector } from '@ngrx/store';
-import * as fromLayoutFeatures from './../features/layouts/reducers/reducers';
+import * as fromSideNavFeatures from './../features/sidenavs/reducers/sidenavs';
+import * as fromLoadingFeatures from './../features/loader-indeterminate/reducers/loaders';
 import * as fromSettingsFeatures from './../features/settings/reducers/settings';
 import * as fromPostmanFeatures from './../features/postman/reducers/requests';
 
+
+export interface AppState {
+    test: boolean;
+}
+
+export function reducers() {
+    return {
+        test: function () { return true; }
+    };
+}
+
+
 // Feature Selectors
-export const selectLayoutsFeature = createFeatureSelector<fromLayoutFeatures.State>('layouts');
+export const selectLoadingFeature = createFeatureSelector<fromLoadingFeatures.State>('loaders');
 export const selectSettingsFeature = createFeatureSelector<fromSettingsFeatures.State>('settings');
 export const selectPostmanFeature = createFeatureSelector<fromPostmanFeatures.State>('postman');
 
-export const selectLoading = createSelector(selectLayoutsFeature, (state: fromLayoutFeatures.State) => state.loading);
+export const selectLoading = createSelector(selectLoadingFeature, (state: fromLoadingFeatures.State) => state.indeterminate);
 export const selectSettings = createSelector(selectSettingsFeature, (state: fromSettingsFeatures.State) => state.models);
 export const selectRequests = createSelector(selectPostmanFeature, (state: fromPostmanFeatures.State) => state.models);
 

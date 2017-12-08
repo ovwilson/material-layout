@@ -1,5 +1,5 @@
 import { ActionReducer, Action } from '@ngrx/store';
-import * as fromActions from './../actions/actions';
+import * as fromActions from './../actions/requests';
 import { SPRequest } from './../models/request';
 
 export interface State {

@@ -3,7 +3,7 @@ import { Setting } from './models/setting';
 
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
-import * as fromFeature from './reducers/reducers';
+import * as fromRoot from './../../reducers/reducers';
 
 import * as fromActions from './actions/settings';
 
@@ -18,9 +18,9 @@ export class SettingsComponent {
     models$: Observable<Setting[]> = Observable.of<Setting[]>([]);
     model$: Observable<Setting> = Observable.of<Setting>();
 
-    constructor(private store: Store<fromFeature.State>) {
-        this.models$ = this.store.select(state => state.settings.models);
-        this.model$ = this.store.select(state => state.settings.model);
+    constructor(private store: Store<fromRoot.AppState>) {
+       // this.models$ = this.store.select(fromRoot.selectSettings);
+       // this.model$ = this.store.select(sfromRoot.selectSettings);
     }
 
     onAdd() {

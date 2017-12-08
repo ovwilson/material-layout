@@ -5,8 +5,8 @@ import { SPRequest } from './models/request';
 
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
-import * as fromFeature from './reducers/reducers';
-import * as fromActions from './actions/actions';
+import * as fromFeature from './reducers/requests';
+import * as fromActions from './actions/requests';
 
 @Component({
     templateUrl: './postman.component.html'

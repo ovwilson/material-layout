@@ -1,5 +1,5 @@
 <mat-sidenav-container>
-
+<!--
   <mat-sidenav mode="side" align="start" [opened]="(sideNavs$ | async).start" (close)="onClose($event)">
     <sidenav-start (onToggleSideNav)="onToggleSideNav($event)"></sidenav-start>
     <router-outlet name="collections"></router-outlet>
@@ -9,7 +9,7 @@
     <sidenav-end (onToggleSideNav)="onToggleSideNav($event)"> </sidenav-end>
     <router-outlet name="documents"></router-outlet>
   </mat-sidenav>
-
+-->
   <header>
     <navbar (onToggleSideNav)="onToggleSideNav($event)"></navbar>
     <loader-indeterminate></loader-indeterminate>
@@ -17,7 +17,6 @@
 
   <main>
     <router-outlet></router-outlet>
-    {{key$ | async}}
   </main>
 
   <footer> </footer>

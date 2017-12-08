@@ -5,7 +5,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { StoreModule, ActionReducerMap } from '@ngrx/store';
 import { SharedMaterialModule } from './../../shared/shared.material.module';
 import { APPRROUTES } from './postman.routing';
-import { reducers } from './reducers/reducers';
+import { requests } from './reducers/requests';
 import { PostManComponent } from './postman.component';
 import { PostManCollectionComponent } from './components/postman-collection/postman-collection.component';
 
@@ -15,7 +15,7 @@ import { PostManCollectionComponent } from './components/postman-collection/post
         RouterModule.forChild(APPRROUTES),
         ReactiveFormsModule,
         SharedMaterialModule,
-        StoreModule.forFeature('postman', reducers)
+        StoreModule.forFeature('postman', requests)
     ],
     declarations: [
         PostManComponent,
