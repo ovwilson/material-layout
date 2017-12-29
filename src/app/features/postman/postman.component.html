@@ -20,9 +20,9 @@
 
         <mat-card-content>
 
-            <form [formGroup]="modelForm" fxLayout="column" fxLayoutGap="30px">
+            <form [formGroup]="modelForm" fxLayout="row" fxLayoutGap="30px">
 
-                <mat-form-field>
+                <mat-form-field fxFlex="20%">
                     <mat-select formControlName="method" placeholder="Select Http Method">
                         <mat-option *ngFor="let method of methods$ | async" [value]="method.value">
                             {{ method.value }}
@@ -30,16 +30,14 @@
                     </mat-select>
                 </mat-form-field>
 
-                <span></span>
-                <mat-radio-group fxLayoutGap="5px">
-                    <mat-radio-button color="primary" *ngFor="let method of methods$ | async" [value]="method?.value">
-                        {{method?.value}}
-                    </mat-radio-button>
-                </mat-radio-group>
-
+                
                 <mat-form-field>
                     <input matInput formControlName="url" placeholder="Url">
                 </mat-form-field>
+
+                <span></span>
+              
+
 
             </form>
 
@@ -84,3 +82,9 @@
     </mat-card>
 
 </div>
+
+<mat-radio-group fxLayoutGap="5px">
+    <mat-radio-button color="primary" *ngFor="let method of methods$ | async" [value]="method?.value">
+        {{method?.value}}
+    </mat-radio-button>
+</mat-radio-group>

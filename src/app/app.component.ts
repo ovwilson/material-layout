@@ -35,7 +35,7 @@ export class AppComponent implements OnInit {
     setTimeout(() => {
       //    this.store.dispatch(new fromSettingsActions.SettingReceive(setting));
       this.store.dispatch(new fromLoaderActions.LoadingHide());
-    }, 3000);
+    }, 4000);
   }
 
   onToggleSideNav(direction: string) {

@@ -14,17 +14,16 @@ import * as fromActions from './actions/settings';
 
 export class SettingsComponent {
 
-    loaderIndeterminate$: Observable<boolean> = Observable.of<boolean>();
     models$: Observable<Setting[]> = Observable.of<Setting[]>([]);
     model$: Observable<Setting> = Observable.of<Setting>();
 
     constructor(private store: Store<fromRoot.AppState>) {
-       // this.models$ = this.store.select(fromRoot.selectSettings);
-       // this.model$ = this.store.select(sfromRoot.selectSettings);
+        this.models$ = this.store.select(fromRoot.selectSettings);
+        // this.model$ = this.store.select(sfromRoot.selectSettings);
     }
 
     onAdd() {
-        
+
     }
 
     onView(model: Setting) {

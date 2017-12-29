@@ -4,7 +4,6 @@ import * as fromLoadingFeatures from './../features/loader-indeterminate/reducer
 import * as fromSettingsFeatures from './../features/settings/reducers/settings';
 import * as fromPostmanFeatures from './../features/postman/reducers/requests';
 
-
 export interface AppState {
     test: boolean;
 }
@@ -28,5 +27,8 @@ export const selectRequests = createSelector(selectPostmanFeature, (state: fromP
 // Selectors
 export const selectSettingTitleKey = createSelector(selectSettingsFeature, (state: fromSettingsFeatures.State) =>
     state.model.titleKey || 'Pending Titlekey');
+
+export const selectMethods = createSelector(selectSettingsFeature, (state: fromSettingsFeatures.State) =>
+    state.models.filter(settings => settings.category === 'methods' && settings.titleKey === 'keywords'));
 
 
