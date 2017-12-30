@@ -95,6 +95,15 @@ module.exports = function (wallaby) {
 
 ```
 
+-- Change `wallaby.js` configuration to Chrome Environment (Optional)
+
+```javascript
+
+    env: {
+      kind: 'chrome'
+    },
+```
+
 - Create `wallabyTest.ts` file in `src` directory
 
 ```javascript
