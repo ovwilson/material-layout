@@ -4,4 +4,5 @@ export interface Setting {
     category?: string;
     key?: string;
     value?: string;
+    Title?: string;
 }
