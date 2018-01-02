@@ -3,7 +3,7 @@ export interface Request {
     url?: string;
     category?: string;
     description?: string;
-    bodyId?:number;
+    bodyId?: number;
     paramsId?: number;
-    headersId?:number;
+    headersId?: number;
 }

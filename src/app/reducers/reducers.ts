@@ -2,7 +2,10 @@ import { StoreModule, ActionReducerMap, createFeatureSelector, createSelector } 
 import * as fromSideNavFeatures from './../features/sidenavs/reducers/sidenavs';
 import * as fromLoadingFeatures from './../features/loader-indeterminate/reducers/loaders';
 import * as fromSettingsFeatures from './../features/settings/reducers/settings';
-import * as fromPostmanFeatures from './../features/postman/reducers/requests';
+import * as fromRequestsFeatures from './../features/requests/reducers/requests';
+
+// Models
+import { Setting } from './../features/settings/models/setting';
 
 export interface AppState {
     test: boolean;
@@ -18,11 +21,12 @@ export function reducers() {
 // Feature Selectors
 export const selectLoadingFeature = createFeatureSelector<fromLoadingFeatures.State>('loaders');
 export const selectSettingsFeature = createFeatureSelector<fromSettingsFeatures.State>('settings');
-export const selectPostmanFeature = createFeatureSelector<fromPostmanFeatures.State>('postman');
+export const selectRequestsFeature = createFeatureSelector<fromRequestsFeatures.State>('requests');
 
 export const selectLoading = createSelector(selectLoadingFeature, (state: fromLoadingFeatures.State) => state.indeterminate);
 export const selectSettings = createSelector(selectSettingsFeature, (state: fromSettingsFeatures.State) => state.models);
-export const selectRequests = createSelector(selectPostmanFeature, (state: fromPostmanFeatures.State) => state.models);
+export const selectRequests = createSelector(selectRequestsFeature, (state: fromRequestsFeatures.State) => state.models);
+export const selectRequestSettings = createSelector(selectRequestsFeature, (state: fromRequestsFeatures.State) => state.settings);
 
 // Selectors
 export const selectSettingTitleKey = createSelector(selectSettingsFeature, (state: fromSettingsFeatures.State) =>
@@ -30,5 +34,17 @@ export const selectSettingTitleKey = createSelector(selectSettingsFeature, (stat
 
 export const selectMethods = createSelector(selectSettingsFeature, (state: fromSettingsFeatures.State) =>
     state.models.filter(settings => settings.category === 'methods' && settings.titleKey === 'keywords'));
+
+
+// Request Selectors for Settings
+export const selectRequestBodies = createSelector(selectRequestSettings, (settings: Setting[]) =>
+    settings.filter(setting => setting.category === 'requests' && setting.titleKey === 'body'));
+
+export const selectRequestHeaders = createSelector(selectRequestSettings, (settings: Setting[]) =>
+    settings.filter(setting => setting.category === 'requests' && setting.titleKey === 'headers'));
+
+export const selectRequestParams = createSelector(selectRequestSettings, (settings: Setting[]) =>
+    settings.filter(setting => setting.category === 'requests' && setting.titleKey === 'params'));
+
 
 
