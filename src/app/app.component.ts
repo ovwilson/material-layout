@@ -23,7 +23,7 @@ export class AppComponent implements OnInit {
   key$: Observable<string> = Observable.of<string>();
 
   constructor(private store: Store<fromRoot.AppState>) {
-    // this.sideNavs$ = this.store.select(fromRoot.);
+    this.sideNavs$ = this.store.select(fromRoot.selectSideNavFeature);
     //   this.key$ = this.store.select(fromRoot.selectSettingTitleKey)
     //    .do(key => this.setKey(key));
   }
@@ -42,7 +42,6 @@ export class AppComponent implements OnInit {
     direction === 'start' ?
       this.store.dispatch(new fromSideNavActions.SideNavStartToggle()) :
       this.store.dispatch(new fromSideNavActions.SideNavEndToggle());
-
   }
 
   setKey(key: string) {
@@ -51,6 +50,5 @@ export class AppComponent implements OnInit {
 
   onClose() {
     console.log('sidenav closed ..');
-    this.store.dispatch(new fromSideNavActions.SideNavReset());
   }
 }

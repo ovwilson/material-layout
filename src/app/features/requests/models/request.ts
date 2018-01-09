@@ -1,9 +1,7 @@
 export interface Request {
+    id?: number;
     method?: string;
     url?: string;
     category?: string;
     description?: string;
-    bodyId?:number;
-    paramsId?: number;
-    headersId?:number;
 }

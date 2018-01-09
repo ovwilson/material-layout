@@ -19,6 +19,10 @@ export class NavbarComponent {
     this.router.navigate(['/home']);
   }
 
+  onRequests() {
+    this.router.navigate(['/request-add', { outlets: { 'requests': 'requests' } }]);
+  }
+
   onSettings() {
     this.router.navigate(['/settings']);
   }

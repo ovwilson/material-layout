@@ -19,11 +19,10 @@ export function reducers() {
 export const selectLoadingFeature = createFeatureSelector<fromLoadingFeatures.State>('loaders');
 export const selectSettingsFeature = createFeatureSelector<fromSettingsFeatures.State>('settings');
 export const selectPostmanFeature = createFeatureSelector<fromPostmanFeatures.State>('postman');
+export const selectSideNavFeature = createFeatureSelector<fromSideNavFeatures.State>('sidenavs');
 
 export const selectLoading = createSelector(selectLoadingFeature, (state: fromLoadingFeatures.State) => state.indeterminate);
 export const selectSettings = createSelector(selectSettingsFeature, (state: fromSettingsFeatures.State) => state.models);
-export const selectRequests = createSelector(selectPostmanFeature, (state: fromPostmanFeatures.State) => state.models);
-
 // Selectors
 export const selectSettingTitleKey = createSelector(selectSettingsFeature, (state: fromSettingsFeatures.State) =>
     state.model.titleKey || 'Pending Titlekey');

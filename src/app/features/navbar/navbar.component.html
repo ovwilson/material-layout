@@ -1,21 +1,22 @@
 <mat-toolbar color="primary">
-    <span>Settings</span>
+    <a mat-icon-button (click)="toggleSideNav('start')">
+        <mat-icon>menu</mat-icon>
+    </a>
     <a mat-button (click)="onHome()">
         <mat-icon>home</mat-icon> Home
     </a>
+    <a mat-icon-button (click)="onRequests()">
+        <mat-icon>send</mat-icon>
+    </a>
     <a mat-button (click)="onSettings()">
-        <mat-icon>settings</mat-icon> Settings
-    </a>
-    <a mat-button (click)="onPostMan()">
-        <mat-icon>pregnant_woman</mat-icon> PostMan
-    </a>
-    <a mat-button (click)="toggleSideNav('start')">
-        <mat-icon>menu</mat-icon> Menu
-    </a>
-    <a mat-button (click)="toggleSideNav('end')">
-        <mat-icon>folder</mat-icon> Folders
+        <mat-icon>settings</mat-icon>
     </a>
     <button mat-raised-button color="accent">
         <strong>Create</strong>
     </button>
+    <span fxFlex></span>
+    <a mat-button (click)="toggleSideNav('end')">
+        <mat-icon>more_vert</mat-icon>
+    </a>
+
 </mat-toolbar>

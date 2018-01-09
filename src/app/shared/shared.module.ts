@@ -6,6 +6,7 @@ import { NavbarComponent } from './../features/navbar/navbar.component';
 import { LoaderIndeterminateComponent } from './../features/loader-indeterminate/loader-indeterminate.component';
 import { SidenavStartComponent } from './../features/sidenavs/components/sidenav-start/sidenav-start.component';
 import { SidenavEndComponent } from './../features/sidenavs/components/sidenav-end/sidenav-end.component';
+
 import { SharedMaterialModule } from './shared.material.module';
 
 // Reducers

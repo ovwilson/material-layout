@@ -6,7 +6,7 @@ export interface State {
     end: boolean;
 }
 
-const initialState: State = { start: false, end: false };
+const initialState: State = { start: true, end: false };
 
 export function sidenavs(state = initialState, action: fromSideNavActions.All) {
     switch (action.type) {
