@@ -19,7 +19,7 @@ export class PostManComponent implements OnInit, AfterViewInit {
     methods$: Observable<any> = Observable.of<any>();
 
     constructor(private store: Store<fromRoot.AppState>, private fb: FormBuilder, private router: Router) {
-        this.methods$ = this.store.select(fromRoot.selectMethods);
+        // this.methods$ = this.store.select(fromRoot.selectMethods);
     }
 
     ngOnInit() {

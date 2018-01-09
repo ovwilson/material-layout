@@ -23,7 +23,7 @@ import {
         MatFormFieldModule,
         MatInputModule,
         MatChipsModule,
-        MatTabsModule, 
+        MatTabsModule,
         MatSelectModule
     ],
     declarations: [],

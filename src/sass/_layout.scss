@@ -12,6 +12,9 @@ mat-sidenav-container {
 
 .home {
     margin: 20px;
+    mat-card > div > mat-toolbar {
+        height: 30px !important;
+    }
 }
 
 .mat-form-field{
