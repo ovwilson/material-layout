@@ -3,7 +3,6 @@ import { Setting} from './../models/setting';
 
 export const SETTINGS_GET = '[Settings] Get';
 export const SETTINGS_RECEIVE = '[Settings] Receive';
-
 export const SETTING_RECEIVE = '[Setting] Receive';
 
 export const SETTING_GET = '[Setting] Get';
@@ -21,7 +20,6 @@ export class SettingsReceive implements Action {
     readonly type = SETTINGS_RECEIVE;
     constructor(public payload: Setting[]) { }
 }
-
 export class SettingReceive implements Action {
     readonly type = SETTING_RECEIVE;
     constructor(public payload: Setting) { }

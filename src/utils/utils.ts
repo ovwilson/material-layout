@@ -7,7 +7,7 @@ interface Seed {
 
 export const seed: Seed = {
     'Setting': () => Object.assign({}, {
-        Id: faker.random.uuid(),
+        id: faker.random.uuid(),
         category: faker.company.bsAdjective(),
         value: faker.lorem.sentence(),
         titleKey: faker.company.bsNoun(),

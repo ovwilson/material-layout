@@ -2,7 +2,10 @@ import { StoreModule, ActionReducerMap, createFeatureSelector, createSelector } 
 import * as fromSideNavFeatures from './../features/sidenavs/reducers/sidenavs';
 import * as fromLoadingFeatures from './../features/loader-indeterminate/reducers/loaders';
 import * as fromSettingsFeatures from './../features/settings/reducers/settings';
-import * as fromPostmanFeatures from './../features/postman/reducers/requests';
+import * as fromRequestsFeatures from './../features/requests/reducers/requests';
+
+// Models
+import { Setting } from './../features/settings/models/setting';
 
 export interface AppState {
     test: boolean;
@@ -29,5 +32,17 @@ export const selectSettingTitleKey = createSelector(selectSettingsFeature, (stat
 
 export const selectMethods = createSelector(selectSettingsFeature, (state: fromSettingsFeatures.State) =>
     state.models.filter(settings => settings.category === 'methods' && settings.titleKey === 'keywords'));
+
+
+// Request Selectors for Settings
+export const selectRequestBodies = createSelector(selectRequestSettings, (settings: Setting[]) =>
+    settings.filter(setting => setting.category === 'requests' && setting.titleKey === 'body'));
+
+export const selectRequestHeaders = createSelector(selectRequestSettings, (settings: Setting[]) =>
+    settings.filter(setting => setting.category === 'requests' && setting.titleKey === 'headers'));
+
+export const selectRequestParams = createSelector(selectRequestSettings, (settings: Setting[]) =>
+    settings.filter(setting => setting.category === 'requests' && setting.titleKey === 'params'));
+
 
 
