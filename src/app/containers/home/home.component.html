@@ -1,14 +1,26 @@
 <div [class.loading]="loaderIndeterminate$ | async">
     <div fxLayout="column" class="home">
-        <h1>Home</h1>
-        <mat-card>
+        <a href="javascript:void(0)" (click)="animateToggle()">Animate Me</a>
 
-            <div fxLayout="row" fxLayoutGap="10px">
-                <button mat-mini-fab disabled></button>
-                <mat-toolbar></mat-toolbar>
-            </div>
+        <div [@wireframeAnimation]="animationState" fxLayout="column" fxLayoutAlign="start center">
+            <h1 fxFlex> Main Content Goes here</h1>
+            <p fxFlex>This is using Angular/Flex-Layout</p>
+        </div>
 
-        </mat-card>
+        <div [@loadAnimation]="animationState">
+
+            <h1>Home</h1>
+            <mat-card>
+
+                <div fxLayout="row" fxLayoutGap="10px">
+                    <button mat-mini-fab disabled></button>
+                    <mat-toolbar></mat-toolbar>
+                </div>
+
+            </mat-card>
+
+        </div>
+
 
     </div>
 </div>

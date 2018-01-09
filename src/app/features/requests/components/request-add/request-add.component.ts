@@ -8,11 +8,13 @@ import * as fromRoot from './../../../../reducers/reducers';
 import * as fromActions from './../../actions/requests';
 
 @Component({
-    selector:'request-add',
+    selector: 'request-add',
     templateUrl: './request-add.component.html'
 })
 
 export class RequestAddComponent {
+
+    isLinear: boolean;
 
 
 }

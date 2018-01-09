@@ -5,7 +5,8 @@ import {
     MatSidenavModule, MatToolbarModule, MatIconModule,
     MatButtonModule, MatProgressBarModule, MatRadioModule,
     MatListModule, MatCardModule, MatFormFieldModule,
-    MatInputModule, MatChipsModule, MatTabsModule, MatSelectModule
+    MatInputModule, MatChipsModule, MatTabsModule, MatSelectModule,
+    MatExpansionModule, MatStepperModule
 } from '@angular/material';
 
 @NgModule({
@@ -24,7 +25,9 @@ import {
         MatInputModule,
         MatChipsModule,
         MatTabsModule,
-        MatSelectModule
+        MatSelectModule,
+        MatExpansionModule,
+        MatStepperModule
     ],
     declarations: [],
     exports: [
@@ -42,7 +45,9 @@ import {
         MatInputModule,
         MatChipsModule,
         MatTabsModule,
-        MatSelectModule
+        MatSelectModule,
+        MatExpansionModule,
+        MatStepperModule
     ]
 })
 export class SharedMaterialModule { }
