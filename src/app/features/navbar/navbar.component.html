@@ -1,3 +1,11 @@
+<!-- Hidden Fields -->
+<mat-card>
+    <mat-card-title>dialogRef$</mat-card-title>
+    <mat-card-subtitle>{{dialogRef$ | async}}</mat-card-subtitle>
+</mat-card>
+
+<!-- End Hidden Fields -->
+
 <mat-toolbar color="primary">
     <a mat-icon-button (click)="toggleSideNav('start')">
         <mat-icon>menu</mat-icon>
@@ -11,7 +19,7 @@
     <a mat-button (click)="onSettings()">
         <mat-icon>settings</mat-icon>
     </a>
-    <button mat-raised-button color="accent">
+    <button id="createBtn" name="createBtn" mat-raised-button color="accent" (click)="onCreate()">
         <strong>Create</strong>
     </button>
     <span fxFlex></span>

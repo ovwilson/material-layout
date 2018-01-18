@@ -1,18 +1,31 @@
 describe('Material Layout', function () {
- 
-    it('.should() - assert that <title> is correct', function () {
-      // https://on.cypress.io/visit
-      cy.visit('http://localhost:4200')
-  
-      // Here we've made our first assertion using a '.should()' command.
-      // An assertion is comprised of a chainer, subject, and optional value.
-  
-      // https://on.cypress.io/should
-      // https://on.cypress.io/and
-  
-      // https://on.cypress.io/title
-      cy.title().should('include', 'MaterialLayout')
-      //   ↲               ↲            ↲
-      // subject        chainer      value
+
+  it('.should() - assert that <title> is correct', function () {
+    cy.visit('http://localhost:4200')
+    cy.title().should('include', 'MaterialLayout')
+    //   ↲               ↲            ↲
+    // subject        chainer      value
+  })
+
+  context('Actions', () => {
+
+    beforeEach(() => {
+      cy.visit('http://localhost:4200/home')
     })
+
+    // Query and Click Create Button
+    it('cy.get() - query DOM elements', function () {
+      cy.get('#createBtn').should('contain', 'Create').click();
+     // cy.get('#dialogNoBtn').should('contain','No').click();
+
+
+
+      // Click Create Button, query for modal popop
+
+      //
+    })
+
+  })
+
 })
+

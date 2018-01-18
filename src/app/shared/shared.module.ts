@@ -6,6 +6,7 @@ import { NavbarComponent } from './../features/navbar/navbar.component';
 import { LoaderIndeterminateComponent } from './../features/loader-indeterminate/loader-indeterminate.component';
 import { SidenavStartComponent } from './../features/sidenavs/components/sidenav-start/sidenav-start.component';
 import { SidenavEndComponent } from './../features/sidenavs/components/sidenav-end/sidenav-end.component';
+import { DialogComponent } from './../features/dialog/dialog.component';
 
 import { SharedMaterialModule } from './shared.material.module';
 
@@ -28,7 +29,11 @@ import { sidenavs } from './../features/sidenavs/reducers/sidenavs';
         NavbarComponent,
         SidenavStartComponent,
         SidenavEndComponent,
-        LoaderIndeterminateComponent
+        LoaderIndeterminateComponent,
+        DialogComponent
+    ],
+    entryComponents : [
+        DialogComponent
     ],
     exports: [
         CommonModule,
@@ -37,7 +42,8 @@ import { sidenavs } from './../features/sidenavs/reducers/sidenavs';
         NavbarComponent,
         SidenavStartComponent,
         SidenavEndComponent,
-        LoaderIndeterminateComponent
+        LoaderIndeterminateComponent,
+        DialogComponent
     ]
 })
 export class SharedModule { }
