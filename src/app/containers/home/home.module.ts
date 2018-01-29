@@ -5,6 +5,8 @@ import { HomeComponent } from './home.component';
 import { APPRROUTES } from './home.routing';
 import { SharedMaterialModule } from './../../shared/shared.material.module';
 
+import { UploadComponent } from './../../features/upload/upload.component';
+
 
 @NgModule({
   imports: [
@@ -13,7 +15,8 @@ import { SharedMaterialModule } from './../../shared/shared.material.module';
     RouterModule.forChild(APPRROUTES)
   ],
   declarations: [
-    HomeComponent
+    HomeComponent,
+    UploadComponent
   ],
   exports: [
     RouterModule

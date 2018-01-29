@@ -1,0 +1,13 @@
+<h4>Papa Parse</h4>
+
+<input type="file">
+
+<button (click)="upload()">Upload</button>
+
+
+<mat-list>
+    <mat-list-item *ngFor="let d of dataUpload">{{d}}</mat-list-item>
+</mat-list>
+
+
+{{dataUpload | json}}
