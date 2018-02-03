@@ -12,7 +12,7 @@
     </mat-list>
 
     <data-table [displayedColumns]="columns" 
-    [dataSource]="dataSource" 
+    [models]="models$ | async" 
     [modelGroup]="modelGroup"></data-table>
 
 </div>

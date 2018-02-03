@@ -4,8 +4,6 @@ import {
 } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 
-import { MatTableDataSource } from '@angular/material';
-
 import * as Papa from 'papaparse';
 import * as faker from 'faker';
 
@@ -45,7 +43,7 @@ export class UploadComponent implements OnInit {
         { name: 'lastName', label: 'Last Name' }
     ];
 
-    dataSource: MatTableDataSource<any> = new MatTableDataSource();
+    models$: Observable<any[]> = Observable.of<any[]>([]);
 
     config = {
         delimiter: '',	// auto-detect
@@ -66,7 +64,6 @@ export class UploadComponent implements OnInit {
         beforeFirstChunk: undefined,
         withCredentials: undefined
     };
-
 
     constructor(private el: ElementRef) { }
 
@@ -91,7 +88,7 @@ export class UploadComponent implements OnInit {
             console.log(records);
             console.log('Columns', columns);
             this.columns = columns;
-            this.dataSource.data = records;
+            this.models$ = Observable.of(records);
         };
     }
 

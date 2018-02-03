@@ -1,5 +1,6 @@
-import {Component, Input, Output, EventEmitter} from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { MatTableDataSource } from '@angular/material';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
     selector: 'data-table',
@@ -8,8 +9,13 @@ import { MatTableDataSource } from '@angular/material';
 
 export class DataTableComponent {
 
-    @Input() dataSource: MatTableDataSource<any> = new MatTableDataSource();
+    @Input('models') set models(data: any[]) {
+        this.dataSource.data = data;
+    }
     @Input() modelGroup: any[];
     @Input() displayedColumns: any[] = [];
+
+    dataSource: MatTableDataSource<any> = new MatTableDataSource();
+
 
 }
