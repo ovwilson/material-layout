@@ -7,8 +7,7 @@ import { LoaderIndeterminateComponent } from './../features/loader-indeterminate
 import { SidenavStartComponent } from './../features/sidenavs/components/sidenav-start/sidenav-start.component';
 import { SidenavEndComponent } from './../features/sidenavs/components/sidenav-end/sidenav-end.component';
 import { DialogComponent } from './../features/dialog/dialog.component';
-
-
+import { DataTableComponent } from './../features/data-table/data-table.component';
 
 import { SharedMaterialModule } from './shared.material.module';
 
@@ -32,7 +31,8 @@ import { sidenavs } from './../features/sidenavs/reducers/sidenavs';
         SidenavStartComponent,
         SidenavEndComponent,
         LoaderIndeterminateComponent,
-        DialogComponent
+        DialogComponent,
+        DataTableComponent
     ],
     entryComponents : [
         DialogComponent
@@ -45,7 +45,8 @@ import { sidenavs } from './../features/sidenavs/reducers/sidenavs';
         SidenavStartComponent,
         SidenavEndComponent,
         LoaderIndeterminateComponent,
-        DialogComponent
+        DialogComponent,
+        DataTableComponent
     ]
 })
 export class SharedModule { }

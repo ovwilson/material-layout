@@ -4,7 +4,10 @@ import {
 } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 
+import { MatTableDataSource } from '@angular/material';
+
 import * as Papa from 'papaparse';
+import * as faker from 'faker';
 
 @Directive({
     selector: '[fileImport]'
@@ -35,9 +38,14 @@ export class UploadComponent implements OnInit {
 
     @ViewChild('fileInput') fileInput: ElementRef;
 
-    constructor(private el: ElementRef) { }
-
     files: Array<File> = [];
+    columns = [];
+    modelGroup = [
+        { name: 'firstName', label: 'First Name' },
+        { name: 'lastName', label: 'Last Name' }
+    ];
+
+    dataSource: MatTableDataSource<any> = new MatTableDataSource();
 
     config = {
         delimiter: '',	// auto-detect
@@ -59,13 +67,32 @@ export class UploadComponent implements OnInit {
         withCredentials: undefined
     };
 
+
+    constructor(private el: ElementRef) { }
+
     ngOnInit() {
+        this.setConfig();
+    }
 
+    setConfig() {
         this.config['complete'] = (results: any, f: File) => {
-            this.files = results.data[0];
-            console.log(this.files);
-        };
+            const records = [];
+            const columns = [];
 
+            results.data.map(result => records.push(
+                Object.assign({}, {
+                    firstName: result[0],
+                    lastName: result[1]
+                })
+            ));
+            Object.keys(records[0])
+                .map(key => columns.push(key));
+
+            console.log(records);
+            console.log('Columns', columns);
+            this.columns = columns;
+            this.dataSource.data = records;
+        };
     }
 
     onImport() {

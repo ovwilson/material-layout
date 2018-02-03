@@ -3,15 +3,15 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { HomeComponent } from './home.component';
 import { APPRROUTES } from './home.routing';
-import { SharedMaterialModule } from './../../shared/shared.material.module';
 
+import { SharedModule } from './../../shared/shared.module';
 import { UploadComponent, FileImportDirective } from './../../features/upload/upload.component';
 
 
 @NgModule({
   imports: [
     CommonModule,
-    SharedMaterialModule,
+    SharedModule,
     RouterModule.forChild(APPRROUTES)
   ],
   declarations: [
