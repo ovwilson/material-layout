@@ -5,7 +5,7 @@ import { HomeComponent } from './home.component';
 import { APPRROUTES } from './home.routing';
 import { SharedMaterialModule } from './../../shared/shared.material.module';
 
-import { UploadComponent } from './../../features/upload/upload.component';
+import { UploadComponent, FileImportDirective } from './../../features/upload/upload.component';
 
 
 @NgModule({
@@ -16,7 +16,8 @@ import { UploadComponent } from './../../features/upload/upload.component';
   ],
   declarations: [
     HomeComponent,
-    UploadComponent
+    UploadComponent,
+    FileImportDirective
   ],
   exports: [
     RouterModule

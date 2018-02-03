@@ -1,13 +1,14 @@
 <h4>Papa Parse</h4>
 
-<input type="file">
+<div fxLayout="column" fxLayoutGap="20px">
 
-<button (click)="upload()">Upload</button>
+    <mat-card class="mat-elevation-z10">
+        <button (click)="onImport()" color="primary" mat-raised-button>Import CSV</button>
+        <input fxHide #fileInput fileImport type="file" (onFileChange)="onFileChange($event)">
+    </mat-card>
 
+    <mat-list *ngIf="!files.length==0" dense class="mat-elevation-z10">
+        <mat-list-item *ngFor="let file of files">{{file}}</mat-list-item>
+    </mat-list>
 
-<mat-list>
-    <mat-list-item *ngFor="let d of dataUpload">{{d}}</mat-list-item>
-</mat-list>
-
-
-{{dataUpload | json}}
+</div>

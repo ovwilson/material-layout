@@ -6,7 +6,7 @@
 
 <!-- End Hidden Fields -->
 
-<mat-toolbar color="primary">
+<mat-toolbar color="primary" class="mat-elevation-z10">
     <a mat-icon-button (click)="toggleSideNav('start')">
         <mat-icon>menu</mat-icon>
     </a>
@@ -19,11 +19,11 @@
     <a mat-button (click)="onSettings()">
         <mat-icon>settings</mat-icon>
     </a>
-    <button id="createBtn" name="createBtn" mat-raised-button color="accent" (click)="onCreate()">
-        <strong>Create</strong>
+    <button id="createBtn" class="mat-elevation-z24" color="accent" name="createBtn" mat-raised-button (click)="onCreate()">
+        Create
     </button>
     <span fxFlex></span>
-    <a mat-button (click)="toggleSideNav('end')">
+    <a mat-icon-button (click)="toggleSideNav('end')">
         <mat-icon>more_vert</mat-icon>
     </a>
 
