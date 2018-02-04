@@ -1,15 +1,27 @@
-<mat-card>
-    <button (click)="onEdit.emit(selection.selected)" color="primary" mat-raised-button [disabled]="!showSingleActions()">
-        <mat-icon>edit</mat-icon> Edit</button>
-    <button color="warn" mat-raised-button [disabled]="!showSingleActions()">
-        <mat-icon>delete</mat-icon> Delete</button>
-    <button color="warn" mat-raised-button [disabled]="!showMultipleActions()">
-        <mat-icon>delete_forever</mat-icon> Delete All Selected</button>
-</mat-card>
+<mat-toolbar>
 
-<mat-card>
-    {{dataSource.data?.length }} record(s) found
-</mat-card>
+    <mat-toolbar-row>
+        {{dataSource.data?.length }} record(s) found
+    </mat-toolbar-row>
+    <mat-toolbar-row *ngIf="showSingleActions()">
+        <span>{{selection.selected.length}} record(s) selected</span>
+        <span fxFlex></span>
+        <button color="primary" (click)="onEdit.emit(selection.selected)" mat-icon-button [disabled]="!showSingleActions()">
+            <mat-icon>edit</mat-icon>
+        </button>
+        <button color="warn" mat-icon-button>
+            <mat-icon>delete</mat-icon>
+        </button>
+    </mat-toolbar-row>
+    <mat-toolbar-row *ngIf="showMultipleActions()">
+        <span>{{selection.selected.length}} record(s) selected</span>
+        <span fxFlex></span>
+        <button color="warn" mat-icon-button>
+            <mat-icon>delete_forever</mat-icon>
+        </button>
+    </mat-toolbar-row>
+
+</mat-toolbar>
 
 <mat-table #table [dataSource]="dataSource" class="mat-elevation-z8">
 

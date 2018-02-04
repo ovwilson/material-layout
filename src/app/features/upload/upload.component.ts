@@ -37,13 +37,13 @@ export class UploadComponent implements OnInit {
     @ViewChild('fileInput') fileInput: ElementRef;
 
     files: Array<File> = [];
-    columns = [];
+    columns = this.onPopulateColumns();
     modelGroup = [
         { name: 'firstName', label: 'First Name' },
         { name: 'lastName', label: 'Last Name' }
     ];
 
-    models$: Observable<any[]> = Observable.of<any[]>([]);
+    models$: Observable<any[]> = Observable.of<any[]>(this.onPopulateData());
 
     config = {
         delimiter: '',	// auto-detect
@@ -88,6 +88,22 @@ export class UploadComponent implements OnInit {
             records.shift();
             this.models$ = Observable.of(records);
         };
+    }
+
+    onPopulateColumns() {
+        return ['firstName', 'lastName'];
+    }
+
+    onPopulateData() {
+        const records = [];
+        const quantity = 10;
+        for (let i = 0; i < quantity; i++) {
+            records.push(Object.assign({}, {
+                firstName: faker.name.firstName(),
+                lastName: faker.name.lastName()
+            }));
+        }
+        return records;
     }
 
     onImport() {
