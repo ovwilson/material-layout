@@ -84,10 +84,8 @@ export class UploadComponent implements OnInit {
             ));
             Object.keys(records[0])
                 .map(key => columns.push(key));
-
-            console.log(records);
-            console.log('Columns', columns);
             this.columns = columns;
+            records.shift();
             this.models$ = Observable.of(records);
         };
     }
@@ -97,7 +95,14 @@ export class UploadComponent implements OnInit {
     }
 
     onFileChange(file: any) {
+        this.files = [];
+        this.files.push(file);
+        console.log('File', file);
         Papa.parse(file, this.config);
+    }
+
+    onEdit(selection: any) {
+        console.log(selection);
     }
 
 }

@@ -1,4 +1,29 @@
+<mat-card>
+    <button (click)="onEdit.emit(selection.selected)" color="primary" mat-raised-button [disabled]="!showSingleActions()">
+        <mat-icon>edit</mat-icon> Edit</button>
+    <button color="warn" mat-raised-button [disabled]="!showSingleActions()">
+        <mat-icon>delete</mat-icon> Delete</button>
+    <button color="warn" mat-raised-button [disabled]="!showMultipleActions()">
+        <mat-icon>delete_forever</mat-icon> Delete All Selected</button>
+</mat-card>
+
+<mat-card>
+    {{dataSource.data?.length }} record(s) found
+</mat-card>
+
 <mat-table #table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <!-- Checkbox Column -->
+    <ng-container matColumnDef="select">
+        <mat-header-cell *matHeaderCellDef>
+            <mat-checkbox (change)="$event ? masterToggle() : null" [checked]="selection.hasValue() && isAllSelected()" [indeterminate]="selection.hasValue() && !isAllSelected()">
+            </mat-checkbox>
+        </mat-header-cell>
+        <mat-cell *matCellDef="let row">
+            <mat-checkbox (click)="$event.stopPropagation()" (change)="$event ? selection.toggle(row) : null" [checked]="selection.isSelected(row)">
+            </mat-checkbox>
+        </mat-cell>
+    </ng-container>
 
     <ng-container *ngFor="let model of modelGroup" [matColumnDef]="model.name">
         <mat-header-cell *matHeaderCellDef> {{model.label}} </mat-header-cell>
@@ -6,5 +31,5 @@
     </ng-container>
 
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selection.toggle(row)"></mat-row>
 </mat-table>
