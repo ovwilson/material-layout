@@ -1,0 +1,22 @@
+<h4>Papa Parse</h4>
+
+<div fxLayout="column" fxLayoutGap="20px">
+
+    <mat-card class="mat-elevation-z10">
+        <button (click)="onImport()" color="primary" mat-raised-button>
+            <mat-icon>backup</mat-icon> Import CSV</button>
+        <input fxHide #fileInput fileImport type="file" (onFileChange)="onFileChange($event)">
+    </mat-card>
+
+    <mat-list dense *ngIf="!files.length==0" dense class="mat-elevation-z10">
+        <mat-list-item *ngFor="let file of files">
+            <h2 mat-line>File Name: {{file.name}}</h2>
+            <p mat-line>File Size: {{file.size}} btye(s)</p>
+            <p mat-line>File Type: {{file.type}} </p>
+            <p mat-line>Last Modified: {{file.lastModified | date:'short'}} </p>
+        </mat-list-item>
+    </mat-list>
+
+    <data-table [columns]="columns" [models]="models$ | async" [modelGroup]="modelGroup" (onEdit)="onEdit($event)"></data-table>
+
+</div>

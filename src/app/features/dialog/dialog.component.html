@@ -1,0 +1,55 @@
+<h2 mat-dialog-title>
+    {{data.title}}</h2>
+
+<mat-dialog-content>
+    <mat-horizontal-stepper [linear]="isLinear">
+        <mat-step>
+            <ng-template matStepLabel>Select Order Type</ng-template>
+            <div fxLayout="row" fxLayoutGap="15px" fxLayoutAlign="center center">
+
+                <mat-radio-group fxLayout="column" fxLayoutGap="10px" [(ngModel)]="orderType">
+                    <mat-radio-button *ngFor="let orderType of orderTypes" [value]="orderType">
+                        {{orderType}}
+                    </mat-radio-button>
+                </mat-radio-group>
+
+                <div [ngSwitch]="orderType">
+                    <ng-template [ngSwitchCase]="'Phones'">Phones are whatever</ng-template>
+                    <ng-template [ngSwitchCase]="'Pagers'">Pagers are whatever</ng-template>
+                    <ng-template [ngSwitchCase]="'CDs'">CDs are whatever</ng-template>
+                    <ng-template [ngSwitchCase]="'DVDs'">DVDs are whatever</ng-template>
+                    <ng-template ngSwitchDefault>Select a Product Type</ng-template>
+                </div>
+
+            </div>
+            <button color="primary" mat-raised-button mat-button mat-dialog-close>Close</button>
+            <span fxFlex></span>
+            <button color="primary" mat-raised-button matStepperNext>Next</button>
+
+        </mat-step>
+        <mat-step>
+            <ng-template matStepLabel>Create Order</ng-template>
+            <div>
+
+                
+
+
+
+                <button color="primary" mat-raised-button matStepperPrevious>Back</button>
+                <span fxFlex></span>
+                <button color="accent" mat-raised-button matStepperNext>Review</button>
+            </div>
+
+        </mat-step>
+        <mat-step>
+            <ng-template matStepLabel>Review Order</ng-template>
+            You are now done.
+            <div>
+                <button color="primary" mat-button matStepperPrevious>Back</button>
+                <span fxFlex></span>
+                <button color="accent" id="dialogYesBtn" name="dialogYesBtn" mat-raised-button [mat-dialog-close]="true">Save</button>
+            </div>
+        </mat-step>
+    </mat-horizontal-stepper>
+
+</mat-dialog-content>

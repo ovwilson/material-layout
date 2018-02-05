@@ -1,18 +1,24 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter, ViewChild } from '@angular/core';
 import { Router, Route } from '@angular/router';
-import { Store } from '@ngrx/store';
-import * as fromSideNavActions from './../sidenavs/actions/sidenavs';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { Observable } from 'rxjs/Observable';
 
+import { DialogComponent } from './../dialog/dialog.component';
 
 @Component({
   selector: 'navbar',
   templateUrl: './navbar.component.html'
 })
+
 export class NavbarComponent {
 
   @Output() onToggleSideNav = new EventEmitter<string>();
 
-  constructor(private router: Router, private store: Store<any>) { }
+  dialogRef$: Observable<any> = Observable.of<any>();
+
+  constructor(private router: Router, public dialog: MatDialog) {
+
+  }
 
   toggleSideNavStart() {
     this.store.dispatch(new fromSideNavActions.SideNavStartToggle());
@@ -30,5 +36,12 @@ export class NavbarComponent {
     this.router.navigate(['/postman', { outlets: { 'collections': 'collection' } }]);
   }
 
+  onCreate() {
+    const dialogRef = this.dialog.open(DialogComponent, {
+       data: { title: 'test', message: 'test message' }
+    });
+    this.dialogRef$ = dialogRef.afterClosed()
+    .do(result => console.log('The dialog was closed', result));
+  }
 
 }

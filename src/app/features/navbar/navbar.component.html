@@ -1,5 +1,13 @@
-<mat-toolbar color="primary">
-    <a mat-icon-button (click)="toggleSideNavStart()">
+<!-- Hidden Fields -->
+<mat-card>
+    <mat-card-title>dialogRef$</mat-card-title>
+    <mat-card-subtitle>{{dialogRef$ | async}}</mat-card-subtitle>
+</mat-card>
+
+<!-- End Hidden Fields -->
+
+<mat-toolbar color="primary" class="mat-elevation-z10">
+    <a mat-icon-button (click)="toggleSideNav('start')">
         <mat-icon>menu</mat-icon>
     </a>
     <a mat-button routerLink="/home">
@@ -11,11 +19,11 @@
     <a mat-button routerLink="/settings">
         <mat-icon>settings</mat-icon>
     </a>
-    <button mat-raised-button color="accent">
-        <strong>Create</strong>
+    <button id="createBtn" class="mat-elevation-z24" color="accent" name="createBtn" mat-raised-button (click)="onCreate()">
+        Create
     </button>
     <span fxFlex></span>
-    <a mat-icon-button (click)="toggleSideNavEnd()">
+    <a mat-icon-button (click)="toggleSideNav('end')">
         <mat-icon>more_vert</mat-icon>
     </a>
 

@@ -1,0 +1,47 @@
+<mat-toolbar>
+
+    <mat-toolbar-row>
+        {{dataSource.data?.length }} record(s) found
+    </mat-toolbar-row>
+    <mat-toolbar-row *ngIf="showSingleActions()">
+        <span>{{selection.selected.length}} record(s) selected</span>
+        <span fxFlex></span>
+        <button color="primary" (click)="onEdit.emit(selection.selected)" mat-icon-button [disabled]="!showSingleActions()">
+            <mat-icon>edit</mat-icon>
+        </button>
+        <button color="warn" mat-icon-button>
+            <mat-icon>delete</mat-icon>
+        </button>
+    </mat-toolbar-row>
+    <mat-toolbar-row *ngIf="showMultipleActions()">
+        <span>{{selection.selected.length}} record(s) selected</span>
+        <span fxFlex></span>
+        <button color="warn" mat-icon-button>
+            <mat-icon>delete_forever</mat-icon>
+        </button>
+    </mat-toolbar-row>
+
+</mat-toolbar>
+
+<mat-table #table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <!-- Checkbox Column -->
+    <ng-container matColumnDef="select">
+        <mat-header-cell *matHeaderCellDef>
+            <mat-checkbox (change)="$event ? masterToggle() : null" [checked]="selection.hasValue() && isAllSelected()" [indeterminate]="selection.hasValue() && !isAllSelected()">
+            </mat-checkbox>
+        </mat-header-cell>
+        <mat-cell *matCellDef="let row">
+            <mat-checkbox (click)="$event.stopPropagation()" (change)="$event ? selection.toggle(row) : null" [checked]="selection.isSelected(row)">
+            </mat-checkbox>
+        </mat-cell>
+    </ng-container>
+
+    <ng-container *ngFor="let model of modelGroup" [matColumnDef]="model.name">
+        <mat-header-cell *matHeaderCellDef> {{model.label}} </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element[model.name]}} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selection.toggle(row)"></mat-row>
+</mat-table>
