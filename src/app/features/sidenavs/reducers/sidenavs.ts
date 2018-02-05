@@ -1,4 +1,4 @@
-import { ActionReducer, Action } from '@ngrx/store';
+import { ActionReducer, Action , createFeatureSelector, createSelector} from '@ngrx/store';
 import * as fromSideNavActions from './../actions/sidenavs';
 
 export interface State {
@@ -20,4 +20,6 @@ export function sidenavs(state = initialState, action: fromSideNavActions.All) {
             return state;
     }
 }
+
+export const selectSideNavFeature = createFeatureSelector<State>('sidenavs');
 

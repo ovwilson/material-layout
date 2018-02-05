@@ -1,5 +1,8 @@
 import { Component, Output, EventEmitter } from '@angular/core';
 import { Router, Route } from '@angular/router';
+import { Store } from '@ngrx/store';
+import * as fromSideNavActions from './../sidenavs/actions/sidenavs';
+
 
 @Component({
   selector: 'navbar',
@@ -9,22 +12,18 @@ export class NavbarComponent {
 
   @Output() onToggleSideNav = new EventEmitter<string>();
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private store: Store<any>) { }
 
-  toggleSideNav(direction: string) {
-    this.onToggleSideNav.emit(direction);
+  toggleSideNavStart() {
+    this.store.dispatch(new fromSideNavActions.SideNavStartToggle());
   }
 
-  onHome() {
-    this.router.navigate(['/home']);
+  toggleSideNavEnd() {
+    this.store.dispatch(new fromSideNavActions.SideNavEndToggle());
   }
 
   onRequests() {
     this.router.navigate(['/request-add', { outlets: { 'requests': 'requests' } }]);
-  }
-
-  onSettings() {
-    this.router.navigate(['/settings']);
   }
 
   onPostMan() {
