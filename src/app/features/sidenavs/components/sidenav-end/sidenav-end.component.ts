@@ -1,4 +1,8 @@
 import { Component, Output, EventEmitter } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs/Observable';
+import * as fromFeature from './../../reducers/sidenavs';
+import * as fromSideNavActions from './../../actions/sidenavs';
 
 @Component({
   selector: 'sidenav-end',
@@ -6,13 +10,11 @@ import { Component, Output, EventEmitter } from '@angular/core';
 })
 export class SidenavEndComponent {
 
-  @Output() onToggleSideNav = new EventEmitter<string>();
+  constructor(private store: Store<fromFeature.State>) { }
 
-  constructor() { }
-
-  toggleSideNav() {
-    this.onToggleSideNav.emit('end');
+  onToggleSideNav() {
+      this.store.dispatch(new fromSideNavActions.SideNavEndToggle());
   }
-
-
 }
+
+

@@ -1,17 +1,17 @@
 <mat-sidenav-container>
 
   <mat-sidenav mode="side" align="start" [opened]="(sideNavs$ | async)?.start" (close)="onClose($event)">
-    <sidenav-start (onToggleSideNav)="onToggleSideNav($event)"></sidenav-start>
+    <sidenav-start></sidenav-start>
     <router-outlet name="requests"></router-outlet>
   </mat-sidenav>
 
   <mat-sidenav mode="side" align="end" [opened]="(sideNavs$ | async)?.end" (close)="onClose($event)">
-    <sidenav-end (onToggleSideNav)="onToggleSideNav($event)"> </sidenav-end>
+    <sidenav-end> </sidenav-end>
     <router-outlet name="documents"></router-outlet>
   </mat-sidenav>
 
   <header>
-    <navbar (onToggleSideNav)="onToggleSideNav($event)"></navbar>
+    <navbar></navbar>
     <loader-indeterminate></loader-indeterminate>
   </header>
 

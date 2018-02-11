@@ -1,8 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 import { StoreModule } from '@ngrx/store';
 import { NavbarComponent } from './../features/navbar/navbar.component';
+
+import { NavStartComponent } from './../components/nav-start/nav-start.component';
 import { LoaderIndeterminateComponent } from './../features/loader-indeterminate/loader-indeterminate.component';
 import { SidenavStartComponent } from './../features/sidenavs/components/sidenav-start/sidenav-start.component';
 import { SidenavEndComponent } from './../features/sidenavs/components/sidenav-end/sidenav-end.component';
@@ -23,6 +26,7 @@ import { sidenavs } from './../features/sidenavs/reducers/sidenavs';
     imports: [
         CommonModule,
         FormsModule,
+        RouterModule,
         SharedMaterialModule,
         StoreModule.forFeature('loaders', loaders),
         StoreModule.forFeature('settings', settings),
@@ -30,6 +34,7 @@ import { sidenavs } from './../features/sidenavs/reducers/sidenavs';
     ],
     declarations: [
         NavbarComponent,
+        NavStartComponent,
         SidenavStartComponent,
         SidenavEndComponent,
         LoaderIndeterminateComponent,
@@ -43,8 +48,10 @@ import { sidenavs } from './../features/sidenavs/reducers/sidenavs';
     exports: [
         CommonModule,
         FormsModule,
+        RouterModule,
         SharedMaterialModule,
         NavbarComponent,
+        NavStartComponent,
         SidenavStartComponent,
         SidenavEndComponent,
         LoaderIndeterminateComponent,

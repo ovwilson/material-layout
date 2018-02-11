@@ -3,6 +3,8 @@ import { Store } from '@ngrx/store';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 import { Observable } from 'rxjs/Observable';
 import * as fromRoot from './reducers/reducers';
+
+import * as fromSideNavFeature from './features/sidenavs/reducers/sidenavs';
 import * as fromSideNavActions from './features/sidenavs/actions/sidenavs';
 import * as fromLoaderActions from './features/loader-indeterminate/actions/loaders';
 import * as fromSettingsActions from './features/settings/actions/settings';
@@ -23,7 +25,7 @@ export class AppComponent implements OnInit {
   key$: Observable<string> = Observable.of<string>();
 
   constructor(private store: Store<fromRoot.AppState>) {
-    this.sideNavs$ = this.store.select(fromRoot.selectSideNavFeature);
+     this.sideNavs$ = this.store.select(fromSideNavFeature.selectSideNavFeature);
     //   this.key$ = this.store.select(fromRoot.selectSettingTitleKey)
     //    .do(key => this.setKey(key));
   }
@@ -38,11 +40,7 @@ export class AppComponent implements OnInit {
     }, 4000);
   }
 
-  onToggleSideNav(direction: string) {
-    direction === 'start' ?
-      this.store.dispatch(new fromSideNavActions.SideNavStartToggle()) :
-      this.store.dispatch(new fromSideNavActions.SideNavEndToggle());
-  }
+ 
 
   setKey(key: string) {
     console.log(key);

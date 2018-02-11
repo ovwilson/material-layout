@@ -20,20 +20,16 @@ export class NavbarComponent {
 
   }
 
-  toggleSideNav(direction: string) {
-    this.onToggleSideNav.emit(direction);
+  toggleSideNavStart() {
+    this.store.dispatch(new fromSideNavActions.SideNavStartToggle());
   }
 
-  onHome() {
-    this.router.navigate(['/home']);
+  toggleSideNavEnd() {
+    this.store.dispatch(new fromSideNavActions.SideNavEndToggle());
   }
 
   onRequests() {
     this.router.navigate(['/request-add', { outlets: { 'requests': 'requests' } }]);
-  }
-
-  onSettings() {
-    this.router.navigate(['/settings']);
   }
 
   onPostMan() {

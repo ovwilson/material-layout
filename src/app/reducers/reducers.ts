@@ -20,6 +20,5 @@ export function reducers() {
 
 // Feature Selectors
 export const selectLoadingFeature = createFeatureSelector<fromLoadingFeatures.State>('loaders');
-export const selectSideNavFeature = createFeatureSelector<fromSideNavFeatures.State>('sidenavs');
 
 export const selectLoading = createSelector(selectLoadingFeature, (state: fromLoadingFeatures.State) => state.indeterminate);
