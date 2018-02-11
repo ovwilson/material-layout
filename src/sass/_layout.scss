@@ -24,3 +24,12 @@ mat-sidenav-container {
 .main {
     margin: 30px;
 }
+
+.highlight {
+    background-color: rgba(240, 233, 233, 0.959); // // Gray 100 (#F5F5F5)
+}
+
+.selected {
+    // Gray 200 (#EEEEEE)
+    background-color: rgba(243, 183, 183, 0.315) !important;
+}

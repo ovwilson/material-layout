@@ -1,6 +1,7 @@
+
 <mat-toolbar>
 
-    <mat-toolbar-row>
+    <mat-toolbar-row *ngIf="!showSingleActions() && !showMultipleActions()">
         {{dataSource.data?.length }} record(s) found
     </mat-toolbar-row>
     <mat-toolbar-row *ngIf="showSingleActions()">
@@ -27,12 +28,12 @@
 
     <!-- Checkbox Column -->
     <ng-container matColumnDef="select">
-        <mat-header-cell *matHeaderCellDef>
-            <mat-checkbox (change)="$event ? masterToggle() : null" [checked]="selection.hasValue() && isAllSelected()" [indeterminate]="selection.hasValue() && !isAllSelected()">
+        <mat-header-cell *matHeaderCellDef >
+            <mat-checkbox #dtCheckBoxGroup (change)="onSelectAll(dtCheckBoxGroup)" (change)="$event ? masterToggle() : null" [checked]="selection.hasValue() && isAllSelected()" [indeterminate]="selection.hasValue() && !isAllSelected()">
             </mat-checkbox>
         </mat-header-cell>
         <mat-cell *matCellDef="let row">
-            <mat-checkbox (click)="$event.stopPropagation()" (change)="$event ? selection.toggle(row) : null" [checked]="selection.isSelected(row)">
+            <mat-checkbox #dtCheckBox (click)="$event.stopPropagation()" (change)="onSelect(dtCheckBox)" (change)="$event ? selection.toggle(row) : null" [checked]="selection.isSelected(row)">
             </mat-checkbox>
         </mat-cell>
     </ng-container>
@@ -43,5 +44,5 @@
     </ng-container>
 
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-    <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selection.toggle(row)"></mat-row>
+    <mat-row dataTableHighlight *matRowDef="let row; columns: displayedColumns;" (click)="selection.toggle(row)"></mat-row>
 </mat-table>
