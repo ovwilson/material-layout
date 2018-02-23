@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, ElementRef, Renderer2 } from '@angular/core';
 import { MatTableDataSource } from '@angular/material';
 import { SelectionModel } from '@angular/cdk/collections';
 import { Observable } from 'rxjs/Observable';
@@ -13,6 +13,8 @@ import { Observable } from 'rxjs/Observable';
 })
 
 export class DataTableComponent {
+
+    constructor(private renderer: Renderer2) { }
 
     @Input('models') set models(data: any[]) {
         this.dataSource.data = data;
@@ -50,6 +52,20 @@ export class DataTableComponent {
 
     showMultipleActions() {
         return this.selection.selected.length >= 2;
+    }
+
+    onSelect(el: any) { /** Toggles CSS background color to selected row */
+        const row = el._elementRef.nativeElement.closest('mat-row');
+        el.checked ? this.renderer.addClass(row, 'selected') :
+            this.renderer.removeClass(row, 'selected');
+    }
+
+    onSelectAll(el: any) { /** Toggles CSS background color to all rows */
+        const table = el._elementRef.nativeElement.closest('mat-table');
+        const rows = table.querySelectorAll('mat-row');
+        el.checked ?
+            rows.forEach(row => this.renderer.addClass(row, 'selected')) :
+            rows.forEach(row => this.renderer.removeClass(row, 'selected'));
     }
 
 

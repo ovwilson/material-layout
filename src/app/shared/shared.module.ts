@@ -12,6 +12,8 @@ import { SidenavEndComponent } from './../features/sidenavs/components/sidenav-e
 import { DialogComponent } from './../features/dialog/dialog.component';
 import { DataTableComponent } from './../features/data-table/data-table.component';
 
+import { DataTableHighlightDirective } from './../features/data-table/data-table.directive';
+
 import { SharedMaterialModule } from './shared.material.module';
 
 // Reducers
@@ -37,7 +39,8 @@ import { sidenavs } from './../features/sidenavs/reducers/sidenavs';
         SidenavEndComponent,
         LoaderIndeterminateComponent,
         DialogComponent,
-        DataTableComponent
+        DataTableComponent,
+        DataTableHighlightDirective
     ],
     entryComponents : [
         DialogComponent
@@ -53,7 +56,8 @@ import { sidenavs } from './../features/sidenavs/reducers/sidenavs';
         SidenavEndComponent,
         LoaderIndeterminateComponent,
         DialogComponent,
-        DataTableComponent
+        DataTableComponent,
+        DataTableHighlightDirective
     ]
 })
 export class SharedModule { }
