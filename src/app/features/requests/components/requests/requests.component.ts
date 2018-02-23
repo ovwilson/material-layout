@@ -7,12 +7,14 @@ import { Observable } from 'rxjs/Observable';
 import * as fromRoot from './../../../../reducers/reducers';
 import * as fromActions from './../../actions/requests';
 
+
 @Component({
     selector:'requests',
     templateUrl: './requests.component.html'
 })
 
 export class RequestsComponent {
+
 
 
 }

@@ -20,14 +20,6 @@ export class NavbarComponent {
 
   }
 
-  toggleSideNavStart() {
-    this.store.dispatch(new fromSideNavActions.SideNavStartToggle());
-  }
-
-  toggleSideNavEnd() {
-    this.store.dispatch(new fromSideNavActions.SideNavEndToggle());
-  }
-
   onRequests() {
     this.router.navigate(['/request-add', { outlets: { 'requests': 'requests' } }]);
   }
@@ -45,3 +37,4 @@ export class NavbarComponent {
   }
 
 }
+

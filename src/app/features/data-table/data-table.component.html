@@ -1,7 +1,11 @@
 <mat-toolbar>
 
     <mat-toolbar-row>
-        {{dataSource.data?.length }} record(s) found
+        <span>{{dataSource.data?.length }} record(s) found</span>
+        <span fxFlex></span>
+        <button color="primary" mat-icon-button>
+            <mat-icon>filter_list</mat-icon>
+        </button>
     </mat-toolbar-row>
     <mat-toolbar-row *ngIf="showSingleActions()">
         <span>{{selection.selected.length}} record(s) selected</span>

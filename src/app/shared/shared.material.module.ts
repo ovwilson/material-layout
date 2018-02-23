@@ -7,7 +7,7 @@ import {
     MatListModule, MatCardModule, MatFormFieldModule,
     MatInputModule, MatChipsModule, MatTabsModule, MatSelectModule,
     MatExpansionModule, MatStepperModule, MatDialogModule,
-    MatTableModule, MatCheckboxModule, MatDividerModule
+    MatTableModule, MatCheckboxModule, MatDividerModule, MatMenuModule
 } from '@angular/material';
 
 @NgModule({
@@ -32,7 +32,8 @@ import {
         MatDialogModule,
         MatTableModule,
         MatCheckboxModule,
-        MatDividerModule
+        MatDividerModule,
+        MatMenuModule
     ],
     declarations: [],
     exports: [
@@ -56,7 +57,8 @@ import {
         MatDialogModule,
         MatTableModule,
         MatCheckboxModule,
-        MatDividerModule
+        MatDividerModule,
+        MatMenuModule
     ]
 })
 export class SharedMaterialModule { }

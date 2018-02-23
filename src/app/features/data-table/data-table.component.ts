@@ -8,7 +8,7 @@ import { Observable } from 'rxjs/Observable';
     selector: 'data-table',
     templateUrl: './data-table.component.html',
     styles: [`
-        .mat-column-select { overflow: initial; }
+        .mat-column-select { overflow: visible; }
         .mat-table { overflow: auto; max-height:500px }e`]
 })
 
