@@ -9,7 +9,7 @@ import { Observable } from 'rxjs/Observable';
     templateUrl: './data-table.component.html',
     styles: [`
         .mat-column-select { overflow: visible; }
-        .mat-table { overflow: auto; max-height:500px }e`]
+        .mat-table { overflow: auto; max-height:500px }`]
 })
 
 export class DataTableComponent {
@@ -19,6 +19,7 @@ export class DataTableComponent {
     @Input('models') set models(data: any[]) {
         this.dataSource.data = data;
     }
+
     @Input('columns') set columns(data: any[]) {
         // tslint:disable-next-line:no-unused-expression
         data.length ? data.unshift('select') : '';
@@ -66,6 +67,13 @@ export class DataTableComponent {
         el.checked ?
             rows.forEach(row => this.renderer.addClass(row, 'selected')) :
             rows.forEach(row => this.renderer.removeClass(row, 'selected'));
+    }
+
+    onFilter(val: any) {
+        this.modelGroup = this.modelGroup.map(model => model.name === val.name ?
+            Object.assign({}, model, { visible: !model.visible }) : model);
+
+            this.dataSource.filter = '';
     }
 
 

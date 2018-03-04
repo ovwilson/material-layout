@@ -39,8 +39,8 @@ export class UploadComponent implements OnInit {
     files: Array<File> = [];
     columns = this.onPopulateColumns();
     modelGroup = [
-        { name: 'firstName', label: 'First Name' },
-        { name: 'lastName', label: 'Last Name' }
+        { name: 'firstName', label: 'First Name', visible: false },
+        { name: 'lastName', label: 'Last Name', visible: true }
     ];
 
     models$: Observable<any[]> = Observable.of<any[]>(this.onPopulateData());
